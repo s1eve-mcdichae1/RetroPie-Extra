@@ -14,7 +14,7 @@
 rp_module_id="rott-darkwar"
 rp_module_desc="rott-darkwar - Rise of the Triad - Dark War"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/zerojay/RoTT/master/COPYING"
-rp_module_help="Please add your full version ROTT files to $romdir/ports/$md_id/ to play."
+rp_module_help="Please add your full version ROTT files to $romdir/ports/rott-darkwar/ to play."
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

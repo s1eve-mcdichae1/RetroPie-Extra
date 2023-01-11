@@ -12,7 +12,7 @@
 
 rp_module_id="rawgl"
 rp_module_desc="rawgl - Another World Engine"
-rp_module_help="Please copy your Another World data files to $romdir/ports/$md_id before running the game."
+rp_module_help="Please copy your Another World data files to $romdir/ports/rawgl before running the game."
 rp_module_section="exp"
 rp_module_repo="git https://github.com/cyxx/rawgl.git"
 rp_module_flags="!mali !x86"
