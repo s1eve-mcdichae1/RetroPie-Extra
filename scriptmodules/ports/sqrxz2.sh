@@ -26,19 +26,10 @@ function install_bin_sqrxz2() {
 }
 
 function configure_sqrxz2() {
-     local script="$md_inst/$md_id.sh"
     moveConfigDir "$home/.config/sqrxz2" "$md_conf_root/sqrxz2"
-
-    cat > "$script" << _EOF_
-#!/bin/bash
-pushd "$md_inst"
-"$md_inst/sqrxz2_rpi" \$*
-popd
-_EOF_
 
     addPort "$md_id" "sqrxz2" "Sqrxz 2 - Two seconds until death by Retroguru" "XINIT: pushd $md_inst; $md_inst/sqrxz2_rpi; popd"
 
-    chmod +x "$script"
     chmod +x "$md_inst/sqrxz2_rpi"
     chmod a+w "$md_inst"
 }

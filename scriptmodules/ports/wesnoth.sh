@@ -16,7 +16,7 @@ rp_module_section="exp"
 rp_module_flags="!mali !x86"
 
 function depends_wesnoth() {
-    getDepends xorg timidity freepats matchbox
+    getDepends xorg timidity freepats
 }
 
 function install_bin_wesnoth() {

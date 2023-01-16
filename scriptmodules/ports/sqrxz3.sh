@@ -26,19 +26,10 @@ function install_bin_sqrxz3() {
 }
 
 function configure_sqrxz3() {
-     local script="$md_inst/$md_id.sh"
     moveConfigDir "$home/.config/sqrxz3" "$md_conf_root/sqrxz2"
-
-    cat > "$script" << _EOF_
-#!/bin/bash
-pushd "$md_inst"
-"$md_inst/sqrxz3_rpi" \$*
-popd
-_EOF_
 
     addPort "$md_id" "sqrxz3" "Sqrxz 3 - Adventure For Love by Retroguru" "XINIT: pushd $md_inst; $md_inst/sqrxz3_rpi; popd"
 
-    chmod +x "$script"
     chmod +x "$md_inst/sqrxz3_rpi"
     chmod a+w "$md_inst"
 }
