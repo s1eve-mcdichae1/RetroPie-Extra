@@ -174,9 +174,11 @@ function toggle_bgm123() {
         local onend_text='(sleep 1; bash "'"$fadescript"'" -CONT) & #bgm123'
         local bashrc_text='[[ "$(tty)" == "/dev/tty1" ]] && (bash "'"$killscript"'" &) #bgm123'
 
-        # add lines to the TOP of autostart, onstart, and the BOTTOM of onend, bashrc
+        # add enable text at the top of autostart file...
         echo "$(echo $autostart_text; cat $autostart)" > "$autostart"
-        echo "$(echo $onstart_text; cat $onstart)" > "$onstart"
+
+        # ...and at the end of other files
+        echo "$onstart_text" >> "$onstart"
         echo "$onend_text" >> "$onend"
         echo "$bashrc_text" >> "$bashrc"
 
