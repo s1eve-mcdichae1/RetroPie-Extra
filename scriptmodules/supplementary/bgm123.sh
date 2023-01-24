@@ -22,7 +22,7 @@ function _get_vars_bgm123() {
         [bashrc]="$home/.bashrc"
         [onstart]="$configdir/all/runcommand-onstart.sh"
         [onend]="$configdir/all/runcommand-onend.sh"
-        [autoconf]="$configdir/all/$md_id.cfg"
+        [config]="$configdir/all/$md_id.cfg"
         [menudir]="$datadir/retropiemenu"
         [init]="$md_inst/bgm_start.sh"
         [killscript]="$md_inst/bgm_stop.sh"
@@ -41,7 +41,7 @@ function depends_bgm123() {
 
 function install_bin_bgm123() {
     local vars=(
-        'autoconf'
+        'config'
         'menudir'
     )
     $(_get_vars_bgm123 "${vars[@]}")
@@ -53,10 +53,10 @@ function install_bin_bgm123() {
         'bgm_fade.sh'
     )
 
-    # copy scripts and include config
+    # copy scripts and source config
     for file in "${scripts[@]}"; do
         cp "$md_data/$file" "$md_inst"
-        sed -i 's|.*#autoconf.*|source "'"$autoconf"'" #autoconf|' "$md_inst/$file"
+        sed -i 's|.*#config.*|source "'"$config"'" #config|' "$md_inst/$file"
     done
 
     # create rp menu items
@@ -71,7 +71,7 @@ function configure_bgm123() {
         'bashrc'
         'onstart'
         'onend'
-        'autoconf'
+        'config'
         'menudir'
     )
     $(_get_vars_bgm123 "${vars[@]}")
@@ -125,11 +125,11 @@ function configure_bgm123() {
     iniSet "music_player" "mpg123"
     iniSet "music_dir" "$share"
     iniSet "mapped_volume" "enabled"
-    copyDefaultConfig "$tmp" "$autoconf"
+    copyDefaultConfig "$tmp" "$config"
     rm -f "$tmp"
 
     # check for enable
-    iniConfig "=" '"' "$autoconf"
+    iniConfig "=" '"' "$config"
     iniGet "status"
     [[ "$ini_value" == "enabled" ]] && toggle_bgm123 on
 
@@ -146,7 +146,7 @@ function toggle_bgm123() {
         'bashrc'
         'onstart'
         'onend'
-        'autoconf'
+        'config'
         'init'
         'killscript'
         'fadescript'
@@ -166,7 +166,7 @@ function toggle_bgm123() {
             chown $user:$user "$file"
         done
 
-        iniConfig "=" '"' "$autoconf"
+        iniConfig "=" '"' "$config"
         iniGet "sleep_timer"
 
         local autostart_text='(sleep '"${ini_value:-10}"'; pgrep emulationstatio >/dev/null && bash "'"$init"'") & #bgm123'
@@ -208,7 +208,7 @@ function enable_bgm123() {
 function gui_bgm123() {
     local vars=(
         'autostart'
-        'autoconf'
+        'config'
         'init'
         'killscript'
         'fadescript'
@@ -216,7 +216,7 @@ function gui_bgm123() {
     $(_get_vars_bgm123 "${vars[@]}")
 
     while true; do
-        iniConfig "=" '"' "$autoconf"
+        iniConfig "=" '"' "$config"
 
         # check if bgm code is actually enabled in autostart
         local status="disabled"
