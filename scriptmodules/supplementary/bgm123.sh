@@ -170,7 +170,7 @@ function toggle_bgm123() {
         iniGet "sleep_timer"
 
         local autostart_text='(sleep '"${ini_value:-10}"'; pgrep emulationstatio >/dev/null && bash "'"$init"'") & #bgm123'
-        local bashrc_text='[[ "$(tty)" == "/dev/tty1" ]] && (bash "'"$killscript"'" &) #bgm123'
+        local bashrc_text='[[ "$(tty)" == "/dev/tty1" ]] && bash "'"$killscript"'" #bgm123'
         local onstart_text='bash "'"$fadescript"'" -STOP & #bgm123'
         local onend_text='(sleep 1; bash "'"$fadescript"'" -CONT) & #bgm123'
 
@@ -303,7 +303,7 @@ function gui_bgm123() {
                     fi
                     ;;
                 N)
-                    su "$user" -c "(bash $killscript; bash $init) &"
+                    su "$user" -c "(bash $killscript; sleep 1; bash $init) &"
                     ;;
             esac
         else
