@@ -116,6 +116,7 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 #### Libretrocores
 
 - [X] - `lr-2048.sh` - 2048 engine - 2048 port for libretro - **Installs, Plays, Runs well**
+- [X] - `lr-applewin` - Apple2e emulator - AppleWin (current) port for libretro - **Installs, Plays, Runs well**
 - [X] - `lr-arduous_lcd` - ArduBoy emulator - arduous port for libretro- **Installs, Plays, Runs well**
 - [X] - `lr-beetle-pce.sh` - PCEngine emu - Mednafen PCE port for libretro**Installs, Plays, Runs well**
 - [X] - `lr-bk.sh` -  Elektronika БК-0010/0011/Terak 8510a emulator - BK port for libretro - **Installs Plays not sure well or not**
@@ -157,8 +158,10 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] - `lr-yabasanshiro.sh` - Saturn & ST-V emulator - Yabasanshiro port for libretro - **Installs Plays fine**
 
 #### Ports
+- [X] - `0ad.sh` - Battle of Survival - is a futuristic real-time strategy game -   **Installs Plays fine**
 - [X] - `abuse.sh` - Classic action game -   **Installs Plays fine, needs keyboard**
 - [X] - `augustus.sh` - Enhanced Caesar III source port - **Installs plays fine, needs mouse**
+- [X] - `avp.sh` - AVP - Aliens versus Predator port - **Installs plays fine, needs mouse**
 - [X] - `barrage.sh` - Shooting Gallery action game - **Installs, Plays fine, needs mouse**
 - [X] - `bermudasyndrome.sh` - Bermuda Syndrome engine - **Installs, plays fine, cant exit, but thats the desine of the engine not the script**
 - [X] - `berusky.sh` - Advanced sokoban clone with nice graphics - **Installs, Plays fine**
@@ -167,6 +170,7 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] - `breaker.sh` - Arkanoid clone - **Installs, plays fine, need to drop the resolutions to 640-480**
 - [X] - `bstone.sh` - BStone A source port of Blake Stone: Aliens of Gold and Blake Stone: Planet Strike **Installs, Plays great**
 - [X] - `burgerspace.sh` - BurgerTime clone - **Installs, plays fine, need to drop the resolutions to 640-480**
+- [X] - `captains.sh`- Captain 'S' The Remake - **Installs, plays great**
 - [X] - `chocolate-doom.sh`- DOOM source port - **Installs, plays great**
 - [X] - `chocolate-doom-system.sh`- For setting up DOOM as an emulated system, not port. - **Installs Plays great**
 - [X] - `chopper258.sh` - Chopper Commando Revisited - A modern port of Chopper Commando (DOS, 1990) - **Installs, Plays fine, needs keyboard**
@@ -175,11 +179,14 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] - `crispy-doom-system.sh` - For setting up DOOM as an emulated system, not port. - **Installs, Plays great**
 - [X] - `devilutionx.sh` - Diablo source port - **Installs, Plays great w/ DEMO**
 - [X] - `dhewm3.sh` - Doom 3 port - **Installs, Plays great w/ DEMO**
+- [X] - `diablo2.sh` - Diablo 2 - Lord of Destruction port - **Installs, Plays great**
+- [X] - `dosbox-x.sh` - DOSbox-X - Testing of a new DOSbox system - **Installs, Plays great**
 - [X] - `dunelegacy.sh` - Dune 2 Building of a Dynasty port - **Installs Play sgreat,/W game**
 - [X] - `easyrpgplayer.sh` - RPG Maker 2000/2003 interpreter - **Installs and launches**
 - [X] - `ecwolf.sh` - ECWolf is an advanced source port for Wolfenstein 3D - **Installs, Plays great**
 - [X] - `eternity.sh` - Enhanced port of the official DOOM source - **Installs, Plays great**
 - [X] - `extremetuxracer.sh` -  Linux verion of Mario cart - **Installs, Plays great**
+- [X] - `fallout2.sh` -  Fallout2-ce - Fallout 2 Community Edition - **Installs, Plays great**
 - [X] - `freeciv.sh` - Civilization online clone - **Tested and works well**
 - [X] - `freedink.sh` - Dink Smallwood engine - **Installs, Plays great**
 - [X] - `freesynd.sh` - Syndicate clone - **Installs, Plays great**
@@ -191,12 +198,14 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] - `gtkboard.sh` - Board games system - **Installs Runs fine**
 - [X] - `hcl.sh` - Hydra Castle Labrinth - **Installs, Plays great**
 - [X] - `heboris.sh` - Tetris The Grand Master clone - **Installs, Plays great,**
+- [X] - `hero2.sh` - FHeroes2 - Heroes of Might and Magic II port - **Installs, Plays great**
 - [X] - `hexen2.sh` - Hexen II - Hammer of Thyrion source port Non-OpenGL - **Installs, Plays great w/demo**
 - [X] - `hexen2gl.sh` - Hexen II - Hammer of Thyrion source port using OpenGL - **Installs, Plays great w/demo**
 - [X] - `hheretic.sh` - Heretic GL port - **Installs, Plays great w/demo**
 - [X] - `hhexen.sh` - Hexen GL portt - **Installs, Plays great w/demo**
 - [X] - `hurrican.sh` - Turrican clone. - **Installs, Plays great**
 - [X] - `ikemen-go.sh` - I.K.E.M.E.N GO - Clone of M.U.G.E.N. - **Installs, Plays great**
+- [X] - `ja2.sh` - Stracciatella - Jagged Alliance 2 engine - **Installs, Plays great**
 - [X] - `jfsw.sh` - Shadow warrior port - **Installs and runs great**
 - [X] - `julius.sh` - Caesar III source port - **Installs, Plays great**
 - [X] - `kraptor.sh` - Shoot em up scroller game - **Installs Runs fine**
@@ -226,6 +235,7 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] - `rawgl.sh` - Another World Engine  - **Installs, Plays great**
 - [X] - `relive.sh` - Oddworld engine for Abe's Oddysee and Abe's Exoddus **Installs Plays well, some graphic glitches**
 - [X] - `reminiscence.sh` - Flashback engine clone - **Installs, Plays fine**
+- [X] - `revolt.sh` - REvolt - a radio control car racing themed video game - **Installs, Plays fine**
 - [ ] - `rickyd.sh` - Rick Dangerous clone - **Blocked from installing on Pi4**
 - [X] - `rigelengine.sh` - RigelEngine - Duke Nukem 2 source port - **Installs, Plays great/ with Demo**
 - [X] - `rocksndiamonds.sh` - Rocks'n'Diamonds - Emerald Mine Clone - **Installs, Plays great**
@@ -242,9 +252,11 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] - `simutrans.sh` - freeware and open-source transportation simulator  **Installs Plays fine**
 - [X] - `sm64ex.sh` - Super Mario 64 PC Port for Pi4 - Works extremely well on Pi 4. **Installs Plays great**
 - [X] - `sorr.sh` - Streets of Rage Remake port - **Installs, Plays great**
+- [X] - `sorrv2.sh` - Streets of Rage Remake port - **Installs, Plays great**
 - [X] - `sqrxz2.sh` - Sqrxz 2 - Two seconds until death - **Installs, Plays great**
 - [X] - `sqrxz3.sh` - Sqrxz 3 - Adventure For Love - **Installs, Plays great**
 - [X] - `sqrxz4.sh` - Sqrxz 4 - Cold Cash - **Installs, Plays great**
+- [X] - `starcraft.sh` - Starcraft - **Installs, Plays great**
 - [X] - `supaplex.sh` - Reverse engineering Supaplex - **Installs, Plays great**
 - [X] - `vanillacc.sh` - Vanilla-Command and Conquer - **Installs, Plays great**
 - [X] - `vcmi.sh` - Open-source engine for Heroes of Might and Magic III - **Installs, Plays great**

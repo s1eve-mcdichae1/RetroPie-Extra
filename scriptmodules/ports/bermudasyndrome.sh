@@ -22,7 +22,7 @@ function depends_bermudasyndrome() {
 }
 
 function sources_bermudasyndrome() {
-    downloadAndExtract "$md_repo_url" "$md_build" --strip-components=1
+    downloadAndExtract "$md_repo_url" "$md_build" "--strip-components=1"
 }
 
 function build_bermudasyndrome() {
