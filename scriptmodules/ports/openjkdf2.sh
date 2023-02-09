@@ -65,10 +65,16 @@ function build_openjkdf2() {
 }
 
 function install_openjkdf2() {
+    if isPlatform "64bit"; then
+        local build_dir="build_linux64"
+    else
+        local build_dir="build"
+    fi
+
     md_ret_files=(
-        build_linux64/openjkdf2
-        build_linux64/libGameNetworkingSockets.so
-        build_linux64/libprotobuf.so.3.21.4.0
+        $build_dir/openjkdf2
+        $build_dir/libGameNetworkingSockets.so
+        $build_dir/libprotobuf.so.3.21.4.0
     )
 }
 
