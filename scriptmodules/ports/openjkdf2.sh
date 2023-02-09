@@ -45,10 +45,11 @@ function sources_openjkdf2() {
 }
 
 function build_openjkdf2() {
+    export CC=clang
+    export CXX=clang++
+    
     if isPlatform "64bit"; then
         local build_dir="build_linux64"
-        export CC=clang
-        export CXX=clang++
 
         chmod +x build_linux64.sh
         ./build_linux64.sh
