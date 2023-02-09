@@ -136,7 +136,9 @@ function game_data_rtcw() {
 }
 
 function configure_rtcw() {
-    rm -R "$home/RetroPie/roms/ports/rtcw/vm"
+    if [[ -d "$home/RetroPie/roms/ports/rtcw/vm" ]]; then
+        rm -R "$home/RetroPie/roms/ports/rtcw/vm"
+    fi
 
     addPort "rtcw-sp" "rtcw-sp" "Return to Castle Wolfenstein (SP)" "$md_inst/iowolfsp.$(_arch_rtcw)"
     addPort "rtcw-mp" "rtcw-mp" "Return to Castle Wolfenstein (MP)" "$md_inst/iowolfmp.$(_arch_rtcw)"
