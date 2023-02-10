@@ -20,23 +20,22 @@ rp_module_section="exp"
 rp_module_flags=""
 
 function depends_openjkdf2() {
+    local depends=(build-essential cmake make python3 python3-pip bison imagemagick libgtk-3-dev
+                   protobuf-compiler zsh)
     if isPlatform "64bit"; then
-        local depends=(
-            git build-essential cmake make python3 python3-pip bison imagemagick libgtk-3-dev protobuf-compiler zsh
-            clang libsdl2-dev libsdl2-mixer-dev libopenal-dev libglew-dev libssl-dev libprotobuf-dev
-        )
-    else
-        local depends=(
-            git build-essential cmake make python3 python3-pip bison imagemagick libgtk-3-dev protobuf-compiler zsh
-            # The following are also referenced in https://github.com/shinyquagsire23/OpenJKDF2/blob/master/BUILDING.md
-            # However, it appears they are invalid packages.
-            #multilib-devel lib32-sdl2 lib32-glew lib32-openal ?
-        )
+        depends+=(clang libsdl2-dev libsdl2-mixer-dev libopenal-dev libglew-dev libssl-dev
+                  libprotobuf-dev)
+    # else
+    #     # The following are also referenced in https://github.com/shinyquagsire23/OpenJKDF2/blob/master/BUILDING.md
+    #     # However, it appears they are invalid packages.
+    #     local depends=(
+    #         #multilib-devel lib32-sdl2 lib32-glew lib32-openal # ?
+    #     )
     fi
 
     getDepends "${depends[@]}"
 
-    # Note: This also needs to run: "pip3 install cogapp"
+    # NOTE: There is a python pypi dependency as well.
     pip3 install cogapp
 }
 
@@ -47,7 +46,7 @@ function sources_openjkdf2() {
 function build_openjkdf2() {
     export CC=clang
     export CXX=clang++
-    
+
     if isPlatform "64bit"; then
         local build_dir="build_linux64"
 
