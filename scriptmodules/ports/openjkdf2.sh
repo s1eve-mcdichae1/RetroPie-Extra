@@ -15,9 +15,9 @@ rp_module_desc="OpenJKDF2 is a function-by-function reimplementation of Dark For
 #
 rp_module_help="Data must be installed manually.\nData for Jedi Knight - Dark Forces 2 goes into $romdir/openjkdf2/openjkdf2.\nData for Jedi Knight - Mysteries of the Sith goes into $romdir/openjkdf2/openjkmots.\nFor both games the 'episode' 'player' 'resource' and 'Music' directories must be copied into their repsective folders."
 rp_module_licence="OTHER https://github.com/shinyquagsire23/OpenJKDF2/blob/master/LICENSE.md"
-rp_module_repo="git https://github.com/shinyquagsire23/OpenJKDF2.git v0.8.8"
+rp_module_repo="git https://github.com/shinyquagsire23/OpenJKDF2.git v0.8.12"
 rp_module_section="exp"
-rp_module_flags=""
+rp_module_flags="!all x86"
 
 function depends_openjkdf2() {
     local depends=(build-essential cmake make python3 python3-pip bison imagemagick libgtk-3-dev
@@ -32,6 +32,11 @@ function depends_openjkdf2() {
     #         #multilib-devel lib32-sdl2 lib32-glew lib32-openal # ?
     #     )
     fi
+    if compareVersions "$__os_debian_ver" gt 11 || compareVersions "$__os_ubuntu_ver" gt 21.10; then
+        depends+=(libstdc++-12-dev)
+    fi
+
+
 
     getDepends "${depends[@]}"
 
