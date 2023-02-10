@@ -17,7 +17,7 @@ rp_module_help="Data must be installed manually.\nData for Jedi Knight - Dark Fo
 rp_module_licence="OTHER https://github.com/shinyquagsire23/OpenJKDF2/blob/master/LICENSE.md"
 rp_module_repo="git https://github.com/shinyquagsire23/OpenJKDF2.git v0.8.12"
 rp_module_section="exp"
-rp_module_flags="!all x86"
+rp_module_flags="!all x86_64"
 
 function depends_openjkdf2() {
     local depends=(build-essential cmake make python3 python3-pip bison imagemagick libgtk-3-dev
