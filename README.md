@@ -174,9 +174,11 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] - `chocolate-doom.sh`- DOOM source port - **Installs, plays great**
 - [X] - `chocolate-doom-system.sh`- For setting up DOOM as an emulated system, not port. - **Installs Plays great**
 - [X] - `chopper258.sh` - Chopper Commando Revisited - A modern port of Chopper Commando (DOS, 1990) - **Installs, Plays fine, needs keyboard**
+- [X] - `corsixth.sh` - CorsixTH - Theme Hospital Engine - **Installs, Plays fine,/W DEMO**
 - [X] - `crack-attack.sh` - Tetris Attack clone - **Installs works, but you need to need to drop the resolutions to 640-480**
 - [X] - `crispy-doom.sh` - DOOM source port - **Installs, Plays great**
 - [X] - `crispy-doom-system.sh` - For setting up DOOM as an emulated system, not port. - **Installs, Plays great**
+- [X] - `cytadela.sh` - Cytadela project - a conversion of an Amiga first person shooter. - **Installs, Plays great**
 - [X] - `devilutionx.sh` - Diablo source port - **Installs, Plays great w/ DEMO**
 - [X] - `dhewm3.sh` - Doom 3 port - **Installs, Plays great w/ DEMO**
 - [X] - `diablo2.sh` - Diablo 2 - Lord of Destruction port - **Installs, Plays great**
@@ -186,6 +188,7 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] - `ecwolf.sh` - ECWolf is an advanced source port for Wolfenstein 3D - **Installs, Plays great**
 - [X] - `eternity.sh` - Enhanced port of the official DOOM source - **Installs, Plays great**
 - [X] - `extremetuxracer.sh` -  Linux verion of Mario cart - **Installs, Plays great**
+- [X] - `fallout1.sh` -  Fallout2-ce - Fallout 2 Community Edition - **Installs, Plays great**
 - [X] - `fallout2.sh` -  Fallout2-ce - Fallout 2 Community Edition - **Installs, Plays great**
 - [X] - `freeciv.sh` - Civilization online clone - **Tested and works well**
 - [X] - `freedink.sh` - Dink Smallwood engine - **Installs, Plays great**
@@ -225,6 +228,7 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] - `openmw.sh` - Morrowind source port - **Installs, Plays great**
 - [X] - `openra.sh` - Real Time Strategy game engine supporting early Westwood classics - **Installs, Plays great**
 - [X] - `openrct2.sh` - RollerCoaster Tycoon 2 port - **Installs, Plays great**
+- [X] - `pcexhumed.sh` - PCExhumed - Powerslave source port - **Installs, Plays great**
 - [X] - `piegalaxy.sh` - Pie Galaxy - Download and install GOG.com games in RetroPie - **Installs Runs, Cant login to test**
 - [X] - `pingus.sh` - Lemmings clone - **Installs, Plays great**
 - [X] - `pokerth.sh` - open source online poker  - **Installs, Plays fine**
@@ -233,6 +237,7 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] - `pydance.sh` - Open Source Dancing Game  - **Installs, Plays fine**
 - [X] - `quakespasm.sh` - Another enhanced engine for quake  - **Installs, Plays fine Need to keep the resolution low for smooth play and full screen**
 - [X] - `rawgl.sh` - Another World Engine  - **Installs, Plays great**
+- [X] - `rednukem.sh` -  Rednukem - Redneck Rampage source port - **Installs, Plays great**
 - [X] - `relive.sh` - Oddworld engine for Abe's Oddysee and Abe's Exoddus **Installs Plays well, some graphic glitches**
 - [X] - `reminiscence.sh` - Flashback engine clone - **Installs, Plays fine**
 - [X] - `revolt.sh` - REvolt - a radio control car racing themed video game - **Installs, Plays fine**
