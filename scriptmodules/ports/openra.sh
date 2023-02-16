@@ -66,7 +66,7 @@ _EOF_
 
     mkRomDir "ports/openra"
 
-addPort "$md_id" "opentd" "Open Tiberian Dawn" "XINIT: /opt/retropie/ports/openra/openra/OTD.sh"
+addPort "opentd" "opentd" "Open Tiberian Dawn" "XINIT: /opt/retropie/ports/openra/openra/OTD.sh"
 
 cat >"$md_inst/openra/OTD.sh" << _EOF_
 
@@ -80,7 +80,7 @@ _EOF_
 
     mkRomDir "ports/opentd"
 
-addPort "$md_id" "opentd" "Open Dune2000" "XINIT: /opt/retropie/ports/openra/openra/OD2K.sh"
+addPort "opend2k" "opentd" "Open Dune2000" "XINIT: /opt/retropie/ports/openra/openra/OD2K.sh"
 
 cat >"$md_inst/openra/OD2K.sh" << _EOF_
 
@@ -93,7 +93,5 @@ _EOF_
  chmod +x "$md_inst/openra/OD2K.sh"
 
     mkRomDir "ports/opend2k"
-
-
 
 }

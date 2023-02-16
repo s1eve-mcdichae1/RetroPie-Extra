@@ -41,8 +41,8 @@ function install_fallout2() {
 }
 
 function configure_fallout2() {
-    mkRomDir "ports/$md_id"
-    ln -snf "$romdir/ports/$md_id" "$md_inst"
+    mkRomDir "$romdir/ports/$md_id"
+    #ln -snf "$romdir/ports/$md_id" "$md_inst"
 
     moveConfigDir "$romdir/ports/$md_id/save" "$md_conf_root/$md_id/save"
     local scriptcfg="$md_inst/fallout2.cfg"
@@ -51,14 +51,14 @@ function configure_fallout2() {
     cat > "$scriptcfg" << _EOF_
 #!/bin/bash
 [sound]
-music_path1=$md_id/sound/music/
-music_path2=$md_id/sound/music/
+music_path1=$romdir/ports/$md_id/sound/music/
+music_path2=$romdir/ports/$md_id/sound/music/
 
 [system]
-critter_dat=$md_id/critter.dat
-critter_patches=$md_id/data
-master_dat=$md_id/master.dat
-master_patches=$md_id/data
+critter_dat=$romdir/ports/$md_id/critter.dat
+critter_patches=$romdir/ports/$md_id/data
+master_dat=$romdir/ports/$md_id/master.dat
+master_patches=$romdir/ports/$md_id/data
 _EOF_
 
  cat > "$script" << _EOF_
