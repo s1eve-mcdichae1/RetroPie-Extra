@@ -50,7 +50,7 @@ function configure_hexen2() {
     moveConfigDir "$home/.hexen2" "$romdir/ports/hexen2"
 
     addPort "$md_id" "hexen2" "Hexen II" "$md_inst/hexen2"
-    [[ -f "$romdir/ports/$md_id/portals/pak3.pak" ]] && addPort "$md_id" "hexen2p" "Hexen II -Portals of Praevus" "$md_inst/glhexen2 -f -conwidth 800 -portals"
+    [[ -f "$romdir/ports/$md_id/portals/pak3.pak" ]] && addPort "$md_id" "hexen2p" "Hexen II -Portals of Praevus" "$md_inst/hexen2 -w -conwidth 800 -portals"
 
     [[ "$md_mode" == "install" ]] && game_data_hexen2
 }
