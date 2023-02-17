@@ -15,10 +15,10 @@ rp_module_licence="GPL2 https://raw.githubusercontent.com/svn2github/uhexen2/mas
 rp_module_help="For registered version, please add your full version PAK files to $romdir/ports/hexen2/data1/ to play. These files for the registered version are required: pak0.pak, pak1.pak and strings.txt. The registered pak files must be patched to 1.11 for Hammer of Thyrion."
 rp_module_repo="git https://github.com/jpernst/uhexen2-sdl2.git"
 rp_module_section="exp"
-rp_module_flags="!mali"
+rp_module_flags=""
 
 function depends_hexen2() {
-    getDepends cmake libsdl1.2-dev libsdl-net1.2-dev libsdl-sound1.2-dev libsdl-mixer1.2-dev libsdl-image1.2-dev timidity freepats xorg
+    getDepends cmake libsdl1.2-dev libsdl-net1.2-dev libsdl-sound1.2-dev libsdl-mixer1.2-dev libsdl-image1.2-dev timidity freepats
 }
 
 function sources_hexen2() {
@@ -47,27 +47,10 @@ function game_data_hexen2() {
 function configure_hexen2() {
     mkRomDir "ports/hexen2"
     mkRomDir "ports/hexen2/portals"
-    mkdir -p "$md_inst"
-    moveConfigDir "$home/.hexen2" "$romdir/ports/$md_id"
-    cat >"$md_inst/$md_id.sh" << _EOF_
-#!/bin/bash
-xset -dpms s off s noblank
-matchbox-window-manager -use_titlebar no &
-$md_inst/hexen2
-_EOF_
-    chmod +x "$md_inst/$md_id.sh"
+    moveConfigDir "$home/.hexen2" "$romdir/ports/hexen2"
 
-    cat >"$md_inst/hexen2p.sh" << _EOF_
-#!/bin/bash
-xset -dpms s off s noblank
-matchbox-window-manager -use_titlebar no &
-$md_inst/hexen2 -portals
-_EOF_
-    chmod +x "$md_inst/hexen2p.sh"
+    addPort "$md_id" "hexen2" "Hexen II" "$md_inst/hexen2"
+    [[ -f "$romdir/ports/$md_id/portals/pak3.pak" ]] && addPort "$md_id" "hexen2p" "Hexen II -Portals of Praevus" "$md_inst/glhexen2 -f -conwidth 800 -portals"
 
-    addPort "$md_id" "hexen2" "Hexen II" "XINIT: $md_inst/hexen2"
-    [[ -f "$romdir/ports/$md_id/portals/pak3.pak" ]] && 
-    addPort "$md_id" "hexen2p" "Hexen II -Portals of Praevus" "XINIT:$md_inst/hexen2p.sh"
-    
     [[ "$md_mode" == "install" ]] && game_data_hexen2
 }
