@@ -34,7 +34,7 @@ function sources_openjk_ja() {
 function build_openjk_ja() {
     mkdir "$md_build/build"
     cd "$md_build/build"
-    cmake -DCMAKE_BUILD_TYPE=Release ..
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$romdir/ports/jediacademy ..
     make clean
     make
 
@@ -58,6 +58,7 @@ function install_openjk_ja() {
 }
 
 function configure_openjk_ja() {
+    mkRomDir "ports/jediacademy"
     local launcher_sp="$md_inst/openjk_sp.$(_arch_openjk_ja)"
     local launcher_mp="$md_inst/openjk.$(_arch_openjk_ja)"
     local params=()
@@ -68,11 +69,9 @@ function configure_openjk_ja() {
     addPort "$md_id" "jediacademy" "Star Wars - Jedi Knight - Jedi Academy (SP)" "$script %ROM% ${params[*]}" "sp"
     addPort "$md_id" "jediacademy" "Star Wars - Jedi Knight - Jedi Academy (MP)" "$script %ROM% ${params[*]}" "mp"
 
-    moveConfigDir "$home/.local/share/openjk" "$md_conf_root/jediacademy/openjk"
+    moveConfigDir "$home/.local/share/openjk" "$romdir/ports/jediacademy"
 
     [[ "$md_mode" == "remove" ]] && return
-
-    mkRomDir "ports/jediacademy"
 
     # link game data to install dir
     ln -snf "$romdir/ports/jediacademy" "$md_inst/base"

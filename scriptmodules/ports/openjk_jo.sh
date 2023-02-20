@@ -34,7 +34,7 @@ function sources_openjk_jo() {
 function build_openjk_jo() {
     mkdir "$md_build/build"
     cd "$md_build/build"
-    cmake -DBuildJK2SPEngine=ON -DBuildJK2SPGame=ON -DBuildJK2SPRdVanilla=ON -DCMAKE_BUILD_TYPE=Release ..
+    cmake -DCMAKE_INSTALL_PREFIX=$romdir/ports/jedioutcast -DBuildJK2SPEngine=ON -DBuildJK2SPGame=ON -DBuildJK2SPRdVanilla=ON -DCMAKE_BUILD_TYPE=Release ..
     make clean
     make
 
@@ -56,6 +56,7 @@ function install_openjk_jo() {
 }
 
 function configure_openjk_jo() {
+    mkRomDir "ports/jedioutcast"
     local launcher_jo_sp="$md_inst/openjo_sp.$(_arch_openjk_jo)"
     local params=("+set com_jk2 1")
     isPlatform "mesa" && params+=("+set cl_renderer opengl1")
@@ -63,12 +64,10 @@ function configure_openjk_jo() {
     local script="$md_inst/launch-$md_id.sh"
 
     addPort "$md_id" "jedioutcast" "Star Wars - Jedi Knight - Jedi Outcast (SP)" "$script %ROM% ${params[*]}" "sp"
-    moveConfigDir "$home/.local/share/openjo" "$md_conf_root/jedioutcast/openjo"
+    moveConfigDir "$home/.local/share/openjo" "$romdir/ports/jedioutcast"
 
     [[ "$md_mode" == "remove" ]] && return
-
-    mkRomDir "ports/jedioutcast"
-
+	
     # link game data to install dir
     ln -snf "$romdir/ports/jedioutcast" "$md_inst/base"
 
