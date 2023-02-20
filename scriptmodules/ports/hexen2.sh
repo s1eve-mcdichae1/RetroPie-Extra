@@ -18,7 +18,7 @@ rp_module_section="exp"
 rp_module_flags=""
 
 function depends_hexen2() {
-    getDepends cmake libsdl1.2-dev libsdl-net1.2-dev libsdl-sound1.2-dev libsdl-mixer1.2-dev libsdl-image1.2-dev timidity freepats
+    getDepends cmake libsdl1.2-dev libsdl-net1.2-dev libsdl-sound1.2-dev libsdl-mixer1.2-dev libsdl-image1.2-dev timidity freepats xorg
 }
 
 function sources_hexen2() {
@@ -47,10 +47,11 @@ function game_data_hexen2() {
 function configure_hexen2() {
     mkRomDir "ports/hexen2"
     mkRomDir "ports/hexen2/portals"
-    moveConfigDir "$home/.hexen2" "$romdir/ports/hexen2"
 
-    addPort "$md_id" "hexen2" "Hexen II" "$md_inst/hexen2"
-    [[ -f "$romdir/ports/$md_id/portals/pak3.pak" ]] && addPort "$md_id" "hexen2p" "Hexen II -Portals of Praevus" "$md_inst/hexen2 -w -conwidth 800 -portals"
+    moveConfigDir "$home/.hexen2" "$romdir/ports/$md_id"
+
+    addPort "$md_id" "hexen2" "Hexen II" "XINIT:$md_inst/hexen2"
+    [[ -f "$romdir/ports/$md_id/portals/pak3.pak" ]] && addPort "$md_id" "hexen2p" "Hexen II -Portals of Praevus" "XINIT:$md_inst/hexen2 -portals"
 
     [[ "$md_mode" == "install" ]] && game_data_hexen2
 }
