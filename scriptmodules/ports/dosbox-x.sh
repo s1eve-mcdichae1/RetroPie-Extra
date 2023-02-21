@@ -13,7 +13,7 @@ rp_module_id="dosbox-x"
 rp_module_desc="Testing of a new DOSbox system"
 rp_module_help="ROM Extensions: .bat .com .exe .sh .conf\n\nCopy your DOS games to ports/dosbox"
 rp_module_licence="GNU https://raw.githubusercontent.com/joncampbell123/dosbox-x/master/COPYING"
-rp_module_repo="git https://github.com/joncampbell123/dosbox-x.git"
+rp_module_repo="git https://github.com/joncampbell123/dosbox-x.git master"
 rp_module_section="exp"
 rp_module_flags=""
 

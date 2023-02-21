@@ -17,7 +17,7 @@ rp_module_help="Please copybase/pak000.pk4\n\nbase/pak001.pk4\n\nbase/pak002.pk4
 and if you have the expansion:\n\n
 d3xp/pak000.pk4\n\n
 d3xp/pak001.pk4\n\nInto the $romdir/doom3/base and $romdir/doom3/d3xp directories"
-rp_module_repo="git https://github.com/dhewm/dhewm3.git"
+rp_module_repo="git https://github.com/dhewm/dhewm3.git master"
 rp_module_section="exp"
 rp_module_flags=""
 

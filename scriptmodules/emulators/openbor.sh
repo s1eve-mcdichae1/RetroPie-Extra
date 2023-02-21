@@ -14,7 +14,7 @@ rp_module_id="openbor-v6510"
 rp_module_desc="OpenBOR - Beat 'em Up Game Engine v6510-dev (official!)"
 rp_module_help="Place your .pak files in $romdir/openbor."
 rp_module_licence="BSD https://raw.githubusercontent.com/crcerror/OpenBOR-Raspberry/master/LICENSE"
-rp_module_repo="git https://github.com/crcerror/OpenBOR-Raspberry.git"
+rp_module_repo="git https://github.com/crcerror/OpenBOR-Raspberry.git master"
 rp_module_section="exp"
 rp_module_flags="!mali !x11"
 

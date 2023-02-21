@@ -14,7 +14,7 @@ rp_module_id="augustus"
 rp_module_desc="Augustus - Enhanced Caesar III source port"
 rp_module_licence="GPL3 https://github.com/Keriew/augustus/blob/master/LICENSE.txt"
 rp_module_help="Augustus requires the original assets (graphics, sounds, etc) from Caesar 3 to run. Add all data files from your Caesar 3 installation folder to $romdir/ports/caesar3. If you want the MP3 music you need to install them to the MP3 folder in the Caesar 3 folder"
-rp_module_repo="git https://github.com/Keriew/augustus.git"
+rp_module_repo="git https://github.com/Keriew/augustus.git master"
 rp_module_section="exp"
 rp_module_flags=""
 

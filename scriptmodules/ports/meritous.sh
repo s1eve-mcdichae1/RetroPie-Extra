@@ -13,7 +13,7 @@
 rp_module_id="meritous"
 rp_module_desc="Meritous - port of an action-adventure dungeon crawl game"
 rp_module_licence="GPL3 https://github.com/TurBoss/meritous/blob/master/gpl.txt"
-rp_module_repo="git https://github.com/TurBoss/meritous.git"
+rp_module_repo="git https://github.com/TurBoss/meritous.git master"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

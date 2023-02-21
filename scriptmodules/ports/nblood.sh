@@ -16,7 +16,7 @@ rp_module_licence="GPL3 https://github.com/OpenMW/osg/blob/3.4/LICENSE.txt"
 rp_module_help="you need to put the \n\BLOOD.INI, \n\BLOOD.RFF, \n\BLOOD000.DEM, ..., BLOOD003.DEM (optional), \n\GUI.RFF, \n\SOUNDS.RFF, \n\SURFACE.DAT, \n\TILES000.ART, ..., TILES017.ART, \n\VOXEL.DAT in $romdir/ports/Nblood
 ,\n\Cryptic Passage,\n\
 CP01.MAP, ..., CP09.MAP,\n\CPART07.AR_,\n\CPART15.AR_,\n\CPBB01.MAP, ..., CPBB04.MAP,\n\CPSL.MAP,\n\CRYPTIC.INI\n\CRYPTIC.SMK \n\CRYPTIC.WAV"
-rp_module_repo="git https://github.com/Exarkuniv/NBlood.git"
+rp_module_repo="git https://github.com/Exarkuniv/NBlood.git master"
 rp_module_section="exp"
 rp_module_flags=""
 

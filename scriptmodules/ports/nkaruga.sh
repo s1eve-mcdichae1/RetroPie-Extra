@@ -13,7 +13,7 @@
 rp_module_id="nkaruga"
 rp_module_desc="nKaruga - Ikaruga demake"
 rp_module_licence="MIT https://github.com/gameblabla/nKaruga/blob/master/COPYING"
-rp_module_repo="git https://github.com/gameblabla/nKaruga.git"
+rp_module_repo="git https://github.com/gameblabla/nKaruga.git master"
 rp_module_section="exp"
 rp_module_flags="!mali !kms"
 

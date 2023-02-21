@@ -13,7 +13,7 @@
 rp_module_id="lr-prboom-system"
 rp_module_desc="Doom/Doom II engine - PrBoom port for libretro"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/libretro/libretro-prboom/master/COPYING"
-rp_module_repo="git https://github.com/libretro/libretro-prboom.git"
+rp_module_repo="git https://github.com/libretro/libretro-prboom.git master"
 rp_module_section="exp"
 
 function sources_lr-prboom-system() {

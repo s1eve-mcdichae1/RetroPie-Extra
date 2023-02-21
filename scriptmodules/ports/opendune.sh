@@ -14,7 +14,7 @@ rp_module_id="opendune"
 rp_module_desc="OpenDune - Dune 2 port using the OpenRA engine"
 rp_module_help="Please put your data files in the roms/ports/opendune/data folder"
 rp_module_licence="GNU https://github.com/OpenDUNE/OpenDUNE/blob/master/COPYING"
-rp_module_repo="git https://github.com/OpenDUNE/OpenDUNE.git"
+rp_module_repo="git https://github.com/OpenDUNE/OpenDUNE.git master"
 rp_module_section="exp"
 rp_module_flags="noinstclean"
 

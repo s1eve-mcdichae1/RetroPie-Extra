@@ -14,7 +14,7 @@ rp_module_id="shiromino"
 rp_module_desc="shiromino - Tetris The Grand Master Clone"
 rp_module_help="Requires a keyboard to exit or restart the game."
 rp_module_licence="MIT https://raw.githubusercontent.com/FelicityVi/shiromino/master/LICENSE"
-rp_module_repo="git https://github.com/FelicityVi/shiromino"
+rp_module_repo="git https://github.com/FelicityVi/shiromino master"
 rp_module_section="exp"
 rp_module_flags="!mali"
 
