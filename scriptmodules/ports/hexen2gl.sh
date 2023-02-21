@@ -50,7 +50,7 @@ function configure_hexen2gl() {
     mkRomDir "ports/hexen2/portals"
 
     addPort "$md_id" "hexen2" "Hexen II" "XINIT:$md_inst/glhexen2 -conwidth 800"
-    [[ -f "$romdir/ports/$md_id/portals/pak3.pak" ]] && 
+    [[ -f "$romdir/ports/hexen2/portals/pak3.pak" ]] && 
 addPort "$md_id" "hexen2p" "Hexen II -Portals of Praevus" "XINIT:$md_inst/glhexen2 -portals -conwidth 800"
 
     moveConfigDir "$home/.hexen2" "$romdir/ports/hexen2"
