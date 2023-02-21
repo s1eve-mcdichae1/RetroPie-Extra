@@ -82,15 +82,18 @@ function config_data_openmw() {
 	
     #download config to for the data files for main and all exp
     if [[ -f "$romdir/ports/morrowind/Morrowind.bsa" && -f "$romdir/ports/morrowind/Tribunal.bsa" && -f "$romdir/ports/morrowind/Bloodmoon.bsa"  ]]; then
-	download "https://raw.githubusercontent.com/Exarkuniv/game-data/main/openmw/1/openmw.cfg" "$md_conf_root/openmw/$md_id"
+	download "https://raw.githubusercontent.com/Exarkuniv/game-data/main/openmw/1/openmw.cfg" "$md_conf_root/openmw"
 	
 	#download config to for the data files for main and tribunal exp
-	elif [[ -f "$romdir/ports/morrowind/Morrowind.bsa" && -f "$romdir/ports/morrowind/Tribunal.bsa" ]]; then
-	download "https://raw.githubusercontent.com/Exarkuniv/game-data/main/openmw/2/openmw.cfg" "$md_conf_root/openmw/$md_id"
+    elif [[ -f "$romdir/ports/morrowind/Morrowind.bsa" && -f "$romdir/ports/morrowind/Tribunal.bsa" ]]; then
+	download "https://raw.githubusercontent.com/Exarkuniv/game-data/main/openmw/2/openmw.cfg" "$md_conf_root/openmw"
 	
 	#download config to for the data files for main and bloodmoon exp
-	elif [[ -f "$romdir/ports/morrowind/Morrowind.bsa" && -f "$romdir/ports/morrowind/Bloodmoon.bsa" ]]; then
-	download "https://raw.githubusercontent.com/Exarkuniv/game-data/main/openmw/3/openmw.cfg" "$md_conf_root/openmw/$md_id"
+    elif [[ -f "$romdir/ports/morrowind/Morrowind.bsa" && -f "$romdir/ports/morrowind/Bloodmoon.bsa" ]]; then
+	download "https://raw.githubusercontent.com/Exarkuniv/game-data/main/openmw/3/openmw.cfg" "$md_conf_root/openmw"
+
+    elif [[ -f "$romdir/ports/morrowind/Morrowind.bsa" ]]; then
+    download "https://raw.githubusercontent.com/Exarkuniv/game-data/main/openmw/4/openmw.cfg" "$md_conf_root/openmw"
 	fi
 }
 
@@ -103,9 +106,6 @@ function configure_openmw() {
 
 	#updated conntroller DB file
     download "https://raw.githubusercontent.com/gabomdq/SDL_GameControllerDB/master/gamecontrollerdb.txt" "$md_inst"
-
-	#config file for just the main game, will search for data files when ran again
-    download "https://raw.githubusercontent.com/Exarkuniv/game-data/main/openmw/4/openmw.cfg" "$md_conf_root/openmw"
 
 	#create buffer script for launch
 	 cat > "$script" << _EOF_
