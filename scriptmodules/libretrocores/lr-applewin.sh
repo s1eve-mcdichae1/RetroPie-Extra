@@ -76,4 +76,3 @@ function configure_lr-applewin() {
     addEmulator 0 "$md_id" "apple2" "$md_inst/applewin_libretro.so"
     addSystem "apple2"
 }
-    

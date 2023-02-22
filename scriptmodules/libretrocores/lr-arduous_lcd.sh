@@ -57,4 +57,3 @@ function configure_lr-arduous_lcd() {
 
     addSystem "arduboy" "ArduBoy" ".hex .7z .zip"
 }
-    
