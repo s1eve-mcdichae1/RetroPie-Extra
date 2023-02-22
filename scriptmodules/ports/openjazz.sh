@@ -14,7 +14,7 @@ rp_module_id="openjazz"
 rp_module_desc="OpenJazz - An enhanced Jazz Jackrabbit source port"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/AlisterT/openjazz/master/COPYING"
 rp_module_help="For playing the registered version, replace the shareware files by adding your full version game files to $romdir/ports/openjazz/."
-rp_module_repo="git https://github.com/AlisterT/openjazz.git"
+rp_module_repo="git https://github.com/AlisterT/openjazz.git master"
 rp_module_section="exp"
 
 function depends_openjazz() {

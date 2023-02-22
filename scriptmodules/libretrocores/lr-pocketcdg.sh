@@ -14,7 +14,7 @@ rp_module_id="lr-pocketcdg"
 rp_module_desc="lr-pocketcdg - pocketcdg port for libretro - A MP3 karaoke music player."
 rp_module_help="ROM Extension: .cdg\n\nCopy your .cdg and .mp3 files into $romdir/pocketcdg."
 rp_module_licence="MIT https://raw.githubusercontent.com/libretro/libretro-pocketcdg/master/LICENSE"
-rp_module_repo="git https://github.com/libretro/libretro-pocketcdg.git"
+rp_module_repo="git https://github.com/libretro/libretro-pocketcdg.git master"
 rp_module_section="exp"
 
 function sources_lr-pocketcdg() {

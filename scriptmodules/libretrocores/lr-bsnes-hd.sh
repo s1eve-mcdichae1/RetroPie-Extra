@@ -13,7 +13,7 @@ rp_module_id="lr-bsnes-hd"
 rp_module_desc="Super Nintendo Emulator - bsnes-HD port for libretro (BETA)"
 rp_module_help="ROM Extensions: .bml .smc .sfc .zip\n\nCopy your SNES roms to $romdir/snes"
 rp_module_licence="GPL3 https://raw.githubusercontent.com/DerKoun/bsnes-hd/master/LICENSE"
-rp_module_repo="git https://github.com/DerKoun/bsnes-hd"
+rp_module_repo="git https://github.com/DerKoun/bsnes-hd master"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

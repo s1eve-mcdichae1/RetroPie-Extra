@@ -14,7 +14,7 @@ rp_module_id="bstone"
 rp_module_desc="Blake Stone - BStone A source port of Blake Stone: Aliens of Gold and Blake Stone: Planet Strike"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/bibendovsky/bstone/develop/LICENSE"
 rp_module_help="For Aliens of Gold registered version, replace the shareware files in $romdir/ports/bstone/aog/ to play. These files for the registered version are required: AUDIOHED.BS6, AUDIOT.BS6, EANIM.BS6, GANIM.BS6, IANIM.BS6, MAPHEAD.BS6, MAPTEMP.BS6, SANIM.BS6, VGADICT.BS6, VGAGRAPH.BS6, VGAHEAD.BS6, VSWAP.BS6."
-rp_module_repo="git https://github.com/bibendovsky/bstone.git"
+rp_module_repo="git https://github.com/bibendovsky/bstone.git master"
 rp_module_section="exp"
 rp_module_flags=""
 

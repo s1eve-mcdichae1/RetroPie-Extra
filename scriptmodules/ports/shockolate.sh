@@ -14,7 +14,7 @@ rp_module_id="shockolate"
 rp_module_desc="Shockolate - Source port of System Shock"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/Interrupt/systemshock/master/LICENSE"
 rp_module_help="Cody original cd-rom or SS:EE assets in a res/data folder in to the ports/shockolate/res."
-rp_module_repo="git https://github.com/Interrupt/systemshock.git"
+rp_module_repo="git https://github.com/Interrupt/systemshock.git master"
 rp_module_section="exp"
 rp_module_flags=""
 

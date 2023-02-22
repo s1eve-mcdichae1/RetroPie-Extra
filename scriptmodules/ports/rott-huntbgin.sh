@@ -14,7 +14,7 @@ rp_module_id="rott-huntbgin"
 rp_module_desc="rott - Rise of the Triad - The Hunt Begins (Shareware)"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/zerojay/RoTT/master/COPYING"
 rp_module_help="Please add your shareware version ROTT files to $romdir/ports/rott-huntbgin/huntbgin to play."
-rp_module_repo="git https://github.com/zerojay/RoTT"
+rp_module_repo="git https://github.com/zerojay/RoTT master"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 
