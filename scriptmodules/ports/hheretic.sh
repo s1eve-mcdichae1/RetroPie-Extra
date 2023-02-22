@@ -45,7 +45,6 @@ function game_data_heretic() {
     mv "$romdir/ports/heretic/files/Data/jHeretic/Music"* "$romdir/ports/heretic/music"
     rm -r "$romdir/ports/heretic/files"
     chown -R $user:$user "$romdir/ports/heretic/music"
-    
 
 }
 

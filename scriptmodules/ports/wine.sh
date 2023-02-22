@@ -133,7 +133,6 @@ PATH="$PATH:/opt/retropie/ports/wine/bin/" BOX86_NOBANNER=1 WINEDEBUG=-all LD_LI
 _EOFTRICKS_
         chmod +x "$winetricks_xinit"
 
-
     addPort "$md_id" "winedesktop" "Wine Desktop" "XINIT:$winedesktop_xinit"
     addPort "$md_id" "wineexplorer" "Wine Explorer" "XINIT:$wineexplorer_xinit"
     addPort "$md_id" "winecfg" "Wine Config" "XINIT:$winecfg_xinit"

@@ -55,9 +55,5 @@ function configure_dunelegacy() {
     addPort "$md_id" "dunelegacy" "Dune Legacy" "XINIT: $md_inst/bin/dunelegacy"     	
     ln -s "/home/pi/RetroPie/roms/ports/dune2/data" "$home/.config/dunelegacy" 
 
-    #cp -r "$md_build/data" "$romdir/ports/$md_id"=
-    #chown -R pi:pi  "/home/pi/.config/dunelegacy/"
-    #chown -R pi:pi  "/home/pi/RetroPie/roms/ports/dunelegacy"
-
     [[ "$md_mode" == "install" ]] && game_data_dunelegacy
 }

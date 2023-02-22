@@ -46,9 +46,4 @@ function configure_shiromino() {
     moveConfigFile "$md_inst/scores.db" "$md_conf_root/shiromino/scores.db"
     moveConfigFile "$md_inst/game.cfg" "$md_conf_root/shiromino/game.cfg"
     mv "$md_inst/game" "$md_inst/shiromino"
-    #chown pi:pi "$md_inst"
-
-    #touch "$md_inst/scores.db"
-
-    
 }

@@ -44,5 +44,3 @@ function configure_cytadela() {
 
     addPort "$md_id" "cytadela" " Cytadela clone" "XINIT:/usr/local/bin/cytadela"
 }
-   
-

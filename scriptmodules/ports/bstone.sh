@@ -61,7 +61,6 @@ function configure_bstone() {
 
     moveConfigDir "$home/.local/share/bibendovsky/bstone" "$md_conf_root/bibendovsky/bstone"
 
-
 cat >"$md_conf_root/bibendovsky/bstone/bstone_config.txt" << _EOF_
 
 vid_renderer "software"

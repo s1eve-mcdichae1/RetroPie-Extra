@@ -36,4 +36,3 @@ _EOF_
     chmod +x "$md_inst/lbreakout2.sh"
     addPort "$md_id" "lbreakout2" "lbreakout2 - Open Source Breakout game" "XINIT: $md_inst/lbreakout2.sh"
 }
-
