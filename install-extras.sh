@@ -92,7 +92,7 @@ function startCmd() {
 function runAuto() {
     echo -e "Placing scriptmodules in $RP_EXTRA\n"
     mkdir -p "$RP_EXTRA"
-    cp -r "$SCRIPTDIR/scriptmodules/" "$RP_EXTRA" && echo "...done."
+    cp -rp "$SCRIPTDIR/scriptmodules/" "$RP_EXTRA" && echo "...done."
     exit
 }
 
@@ -138,7 +138,7 @@ function runGui() {
 
 function guiAddAll() {
     if dialog --clear --backtitle "$BACKTITLE" --cr-wrap --no-collapse --defaultno --yesno "-- Install all\n\nThis may severely impact the loading times of RetroPie-Setup and retropiemenu configuration items, especially on slower hardware.\n\nDo you wish to continue?" 20 60 2>&1 >/dev/tty; then
-        local errormsg="$(mkdir -p "$RP_EXTRA" 2>&1 && cp -rf "$SCRIPTDIR/scriptmodules" "$RP_EXTRA" 2>&1 && echo "All scriptmodules copied to $RP_EXTRA")"
+        local errormsg="$(mkdir -p "$RP_EXTRA" 2>&1 && cp -rpf "$SCRIPTDIR/scriptmodules" "$RP_EXTRA" 2>&1 && echo "All scriptmodules copied to $RP_EXTRA")"
         dialog --backtitle "$BACKTITLE" --cr-wrap --no-collapse --programbox 20 60 2>&1 >/dev/tty < <(echo "$errormsg" | fold -w 56 -s)
     else
         dialog --backtitle "$BACKTITLE" --cr-wrap --no-collapse --msgbox "Operation canceled." 8 24 2>&1 >/dev/tty
@@ -226,8 +226,8 @@ function copyModule() {
     local datadir="${script%.*}"
 
     mkdir -p "$target" 2>&1 \
-      && cp -f "$script" "$target" 2>&1 \
-      && [[ ! -d "$datadir" ]] || cp -rf "$datadir" "$target" 2>&1
+      && cp -pf "$script" "$target" 2>&1 \
+      && [[ ! -d "$datadir" ]] || cp -rpf "$datadir" "$target" 2>&1
 }
 
 function viewModules() {
@@ -361,7 +361,7 @@ function guiSection() {
 function addSection() {
     local section="$1"
     if dialog --backtitle "$BACKTITLE" --cr-wrap --no-collapse --defaultno --yesno "All $section will be copied to $RP_EXTRA\n\nThis may significantly impact the loading time of RetroPie-Setup and retropiemenu configuration items, especially on slower hardware.\n\nDo you wish to continue?" 20 60 2>&1 >/dev/tty; then
-        local errormsg="$(mkdir -p "$RP_EXTRA/scriptmodules/$section" 2>&1 && cp -rf "$SCRIPTDIR/scriptmodules/$section" "$RP_EXTRA/scriptmodules" 2>&1 && echo "All $section copied to $RP_EXTRA")"
+        local errormsg="$(mkdir -p "$RP_EXTRA/scriptmodules/$section" 2>&1 && cp -rpf "$SCRIPTDIR/scriptmodules/$section" "$RP_EXTRA/scriptmodules" 2>&1 && echo "All $section copied to $RP_EXTRA")"
         dialog --backtitle "$BACKTITLE" --cr-wrap --no-collapse --programbox 20 60 2>&1 >/dev/tty < <(echo "$errormsg" | fold -w 56 -s)
     else
         dialog --backtitle "$BACKTITLE" --cr-wrap --no-collapse --msgbox "Operation canceled." 8 24 2>&1 >/dev/tty
