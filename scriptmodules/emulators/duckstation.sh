@@ -18,7 +18,7 @@ rp_module_section="exp"
 rp_module_flags="!armv6 rpi4"
 
 function depends_duckstation() {
-    getDepends libsdl2-dev libxrandr-dev pkg-config qtbase5-dev qtbase5-private-dev qtbase5-dev-tools qttools5-dev libevdev-dev libwayland-dev libwayland-egl-dev extra-cmake-modules libcurl4-gnutls-dev libgbm-dev libdrm-dev xorg matchbox-window-manager
+    getDepends libsdl2-dev libxrandr-dev pkg-config qtbase5-dev qtbase5-private-dev qtbase5-dev-tools qttools5-dev libevdev-dev libwayland-dev libwayland-egl-backend-dev extra-cmake-modules libcurl4-gnutls-dev libgbm-dev libdrm-dev xorg matchbox-window-manager
 }
 
 function sources_duckstation() {
@@ -26,17 +26,23 @@ function sources_duckstation() {
 }
 
 function install_duckstation() {
-    md_ret_files=('duckstation'
+    md_ret_files=('/database'
+		'/inputprofiles'
+		'/isos'
+		'/resources'
+		'/shaders'
+		'/translations'
+		'/duckstation-qt'
     )
 }
 
 function configure_duckstation() {
     mkRomDir "psx"
     mkUserDir "$md_conf_root/psx"
-    mkdir -p "$md_inst/bios"
+    mkdir -p "/home/pi/.local/share/duckstation/bios"
 
     # symlink the bios so it can be installed with the other bios files
-    ln -sf "$biosdir/SCPH1001.BIN" "/home/pi/.local/share/duckstation/bios"
+    ln -sf "$biosdir/" "/home/pi/.local/share/duckstation/"
 
     addEmulator 0 "$md_id" "psx" "XINIT: $md_inst/duckstation.sh -fullscreen %ROM%"
     addSystem "psx"
