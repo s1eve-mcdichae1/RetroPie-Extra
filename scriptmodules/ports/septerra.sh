@@ -29,7 +29,7 @@ function configure_septerra() {
     ln -sf "$romdir/ports/$md_id" "$md_inst"
     local script="$md_inst/$md_id.sh"
     moveConfigDir "$romdir/ports/$md_id/savedata" "$md_conf_root/$md_id/savedata"
-    addPort "$md_id" "septerra" "Septerra Core: Legacy of the Creator port" "$script %ROM%"
+    addPort "$md_id" "septerra" "Septerra Core - Legacy of the Creator port" "$script %ROM%"
 
     #create buffer script for launch
     cat > "$script" << _EOF_
