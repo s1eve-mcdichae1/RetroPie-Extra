@@ -2,9 +2,8 @@
 
 # bgm123 kill script for RetroPie
 
-source #autoconf
+source #config
 
-vcgencmd force_audio hdmi 0 >/dev/null && sleep 0.1
 pkill "$music_player"
 
 # if killed while stopped (music paused), process will not terminate correctly.

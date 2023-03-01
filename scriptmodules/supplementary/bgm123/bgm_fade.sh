@@ -9,7 +9,7 @@
 # https://github.com/crcerror/RetroPie-Shares/blob/master/BGM_vol_fade.sh
 #
 
-source #autoconf
+source #config
 
 # avoid multiple starts
 wait=0
