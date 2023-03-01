@@ -47,9 +47,12 @@ function game_data_augustus() {
 }
 
 function configure_augustus() {
-       [[ "$md_mode" == "install" ]] && game_data_augustus
-	addPort "$md_id" "augustus" "Caesar III" "$md_inst/augustus $romdir/ports/caesar3"
-	mkRomDir "ports/caesar3"
-	mkRomDir "ports/caesar3/mp3"
-	moveConfigDir "$home/.local/share/Kerirw/augustus" "$md_conf_root/augustus"
+    mkRomDir "ports/caesar3"
+    mkRomDir "ports/caesar3/mp3"
+    #moveConfigDir "$home/.local/share/Kerirw/augustus" "$md_conf_root/augustus"
+
+    addPort "$md_id" "augustus" "Caesar III" "$md_inst/augustus $romdir/ports/caesar3"
+
+    [[ "$md_mode" == "install" ]] && game_data_augustus
+
 }
