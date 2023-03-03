@@ -27,7 +27,7 @@ function install_bin_kraptor() {
 function configure_kraptor() {
     mkRomDir "ports"
     mkdir -p "$md_inst"
-    moveConfigDir "$home/.config" "$md_conf_root/$md_id"
+    moveConfigDir "$home/.config/$md_id" "$md_conf_root/$md_id"
     cat >"$md_inst/kraptor.sh" << _EOF_
 #!/bin/bash
 xset -dpms s off s noblank
