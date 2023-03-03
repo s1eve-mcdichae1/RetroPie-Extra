@@ -52,8 +52,17 @@ function install_openra() {
 }
 
 function configure_openra() {
-    addPort "$md_id" "openra" "Open Red Alert" "XINIT: /opt/retropie/ports/openra/openra/ORA.sh"
+    mkRomDir "ports/opend2k"
+    mkRomDir "ports/openra"
+    mkRomDir "ports/opentd"
+    mkRomDir "ports/opents"
 
+    addPort "$md_id" "openra" "Open Red Alert" "XINIT: /opt/retropie/ports/openra/openra/ORA.sh"
+    addPort "opentd" "opentd" "Open Tiberian Dawn" "XINIT: /opt/retropie/ports/openra/openra/OTD.sh"
+    addPort "opend2k" "opend2k" "Open Dune2000" "XINIT: /opt/retropie/ports/openra/openra/OD2K.sh"
+    addPort "opents" "opents" "Open Tiberian Sun" "XINIT: /opt/retropie/ports/openra/openra/OTS.sh"
+
+ #running script for Red Alert
 cat >"$md_inst/openra/ORA.sh" << _EOF_
 
 #!/bin/bash
@@ -62,12 +71,7 @@ cd "$md_inst/openra"
 
 _EOF_
 
- chmod +x "$md_inst/openra/ORA.sh"
-
-    mkRomDir "ports/openra"
-
-addPort "opentd" "opentd" "Open Tiberian Dawn" "XINIT: /opt/retropie/ports/openra/openra/OTD.sh"
-
+ #running script for Tiberian Dawn
 cat >"$md_inst/openra/OTD.sh" << _EOF_
 
 #!/bin/bash
@@ -76,12 +80,7 @@ cd "$md_inst/openra"
 
 _EOF_
 
- chmod +x "$md_inst/openra/OTD.sh"
-
-    mkRomDir "ports/opentd"
-
-addPort "opend2k" "opentd" "Open Dune2000" "XINIT: /opt/retropie/ports/openra/openra/OD2K.sh"
-
+ #running script for Dune2000
 cat >"$md_inst/openra/OD2K.sh" << _EOF_
 
 #!/bin/bash
@@ -90,8 +89,17 @@ cd "$md_inst/openra"
 
 _EOF_
 
- chmod +x "$md_inst/openra/OD2K.sh"
+ #running script for Tiberian Sun
+cat >"$md_inst/openra/OTS.sh" << _EOF_
 
-    mkRomDir "ports/opend2k"
+#!/bin/bash
+cd "$md_inst/openra"
+./launch-game.sh Game.Mod=ts -- :0 vt\$XDG_VTNR
 
+_EOF_
+
+    chmod +x "$md_inst/openra/OTS.sh"
+    chmod +x "$md_inst/openra/OD2K.sh"
+    chmod +x "$md_inst/openra/ORA.sh"
+    chmod +x "$md_inst/openra/OTD.sh"
 }
