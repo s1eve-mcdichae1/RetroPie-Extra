@@ -23,31 +23,27 @@ function depends_openra() {
     echo "deb https://download.mono-project.com/repo/debian stable-raspbianbuster main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
     apt update
     aptInstall mono-devel
+    curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --version 6.0.406
+
 }
 
 function sources_openra() {
-    
-       mkdir -p openra
-
-	wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-release-20210321-source.tar.bz2
-	tar xvjf OpenRA-release-20210321-source.tar.bz2 -C /home/pi/RetroPie-Setup/tmp/build/openra/openra 	
+    mkdir -p openra
+    wget https://github.com/OpenRA/OpenRA/releases/download/release-20230225/OpenRA-release-20230225-source.tar.bz2
+    tar xvjf OpenRA-release-20230225-source.tar.bz2 -C /home/pi/RetroPie-Setup/tmp/build/openra/openra 	
 }
 
 function build_openra() {
-        curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --version 5.0.203
-	echo 'export DOTNET_ROOT=$HOME/.dotnet' >> ~/.bashrc
-	echo 'export PATH=$PATH:$HOME/.dotnet' >> ~/.bashrc
-	source ~/.bashrc
-
-		cd openra
-
-	make
+    echo 'export DOTNET_ROOT=$HOME/.dotnet' >> ~/.bashrc
+    echo 'export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools' >> ~/.bashrc
+    source ~/.bashrc
+    cd openra
+    make RUNTIME=mono
     md_ret_require="$md_build/openra"
 }
 
 function install_openra() {
-    md_ret_files=(
-	'openra'
+    md_ret_files=('openra'
  )
 }
 
@@ -56,6 +52,8 @@ function configure_openra() {
     mkRomDir "ports/openra"
     mkRomDir "ports/opentd"
     mkRomDir "ports/opents"
+
+    moveConfigDir "$home/.config/openra" "$md_conf_root/openra"
 
     addPort "$md_id" "openra" "Open Red Alert" "XINIT: /opt/retropie/ports/openra/openra/ORA.sh"
     addPort "opentd" "opentd" "Open Tiberian Dawn" "XINIT: /opt/retropie/ports/openra/openra/OTD.sh"
