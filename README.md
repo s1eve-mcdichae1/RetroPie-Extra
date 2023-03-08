@@ -5,16 +5,9 @@
 This is a **collection of unofficial installation scripts for RetroPie** allowing you to quickly and easily **install emulators, ports and libretrocores** that haven't been included in RetroPie for one reason or another. These scripts can be considered experimental at best. 
 I have found new scripts made by other people and added them to this Repo. I dont take credit for any of them, other then the ones I made
 
-Most of the scripts do work as is.
+Most of the scripts do work as is. 
 
-**1 Find out what ones install as is and mark them as so / DONE, all working ones are marked**
-
-
-**2 See if the ones that dont Install can be fixed to install/ DONE, As far as I can at this time**
-
-**3 Clean up all the scripts to the new way RetroPie is writing the scripts/ DONE, they are cleaned up to my knowledge**
-
-**4. Make new scripts/rework old ones that I pulled out**
+**THIS WILL ONLY WORK ON CURRENT RETROPIE/BUSTER 10**
 
 I have changed the list below to show what has been tested to at least to install. I dont have all the games so I cant test them all 
 

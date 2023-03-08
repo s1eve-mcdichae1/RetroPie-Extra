@@ -56,7 +56,7 @@ function configure_jfsw() {
     [[ "$md_mode" == "install" ]] && gamedata_jfsw
     addPort "$md_id" "sw" "Shadow Warrior source port" "$md_inst/sw %ROM%" ""
     local gamedir="$romdir/ports/shadowwarrior"
-    [[ -f "$gamedir/dragon.zip" ]] && addPort "$md_id" "sw" "Shadow Warrior: Twin Dragon" "$md_inst/sw %ROM%" "-gdragon.zip"
-    [[ -f "$gamedir/wt.grp" ]] && addPort "$md_id" "sw" "Shadow Warrior: Wanton Destruction" "$md_inst/sw %ROM%" "-gwt.grp"
+    [[ -f "$gamedir/dragon.zip" ]] && addPort "$md_id" "sw" "Shadow Warrior Twin Dragon" "$md_inst/sw %ROM%" "-gdragon.zip"
+    [[ -f "$gamedir/wt.grp" ]] && addPort "$md_id" "sw" "Shadow Warrior Wanton Destruction" "$md_inst/sw %ROM%" "-gwt.grp"
     moveConfigDir "$home/.jfsw" "$md_conf_root/sw"
 }
