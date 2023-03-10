@@ -59,15 +59,15 @@ function configure_lr-swanstation() {
 
     if isPlatform "gles" && ! isPlatform "gles3"; then
         # Hardware renderer not supported on GLES2 devices
-        setRetroArchCoreOption "duckstation_GPU.Renderer" "Software"
+        setRetroArchCoreOption "swanstation_GPU_Renderer" "Software"
     fi
 
     # Pi 4 has occasional slowdown with hardware rendering
     # e.g. Gran Turismo 2 (Arcade) race start
-    isPlatform "rpi4" && setRetroArchCoreOption "duckstation_GPU.Renderer" "Software"
+    isPlatform "rpi4" && setRetroArchCoreOption "swanstation_GPU_Renderer" "Software"
 
     # Configure the memory card 1 saves through the libretro API
-    setRetroArchCoreOption "duckstation_MemoryCards.Card1Type" "NonPersistent"
+    setRetroArchCoreOption "swanstation_MemoryCards_Card1Type" "Libretro"
 
 
     addEmulator 1 "$md_id" "psx" "$md_inst/swanstation_libretro.so"
