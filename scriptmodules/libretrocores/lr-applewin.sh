@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
 
 # This file is part of The RetroPie Project
 #
@@ -17,7 +17,6 @@ rp_module_repo="git https://github.com/audetto/AppleWin.git master"
 rp_module_section="exp"
 rp_module_flags=""
 
-# TODO: remove_lr-applewin scriptmodule function
 
 function depends_lr-applewin() {
     local depends=(
@@ -39,11 +38,14 @@ function depends_lr-applewin() {
 function sources_lr-applewin() {
     gitPullOrClone $md_build/../libslirp https://gitlab.freedesktop.org/slirp/libslirp.git
     gitPullOrClone
+    # make sure resources/ will be looked up at /opt/retropie/libretrocores/lr-applewin/
+    sed -i s,CMAKE_SOURCE_DIR,\"$md_inst\", \
+        $md_build/source/frontends/common2/gnuframe.cpp
 }
 
 function build_lr-applewin() {
     # for libslirp
-    pushd $(pwd)/../libslirp
+    pushd $md_build/../libslirp
     meson build
     ninja -C build install
     popd
@@ -53,25 +55,30 @@ function build_lr-applewin() {
     cd target
     cmake -DBUILD_LIBRETRO=ON -DCMAKE_BUILD_TYPE=RELEASE ..
     make clean
-    make -j $(nproc)
+    make
     md_ret_require="$md_build/target/source/frontends/libretro/applewin_libretro.so"
 }
 
 function install_lr-applewin() {
+    rm -rf $md_build/../libslirp
     md_ret_files=(
         'LICENSE'
+        'resource/'
         'target/source/frontends/libretro/applewin_libretro.so'
     )
 }
 
 function configure_lr-applewin() {
     mkRomDir "apple2"
-    
-    defaultRAConfig "apple2" "input_auto_game_focus" "2" # mode "Detect"
-    defaultRAConfig "apple2" "load_dummy_on_core_shutdown" "false"
-    # adjust button number below to your setup, see:
-    # https://retropie.org.uk/docs/RetroArch-Configuration/#determining-button-values
-    defaultRAConfig "apple2" "input_game_focus_toggle_btn" "3"
+
+    if [[ "$md_mode" == "install" ]] ; then
+        defaultRAConfig "apple2" "input_auto_game_focus" "0" # 0: off, 1: on, 2: detect
+        defaultRAConfig "apple2" "load_dummy_on_core_shutdown" "false"
+        # Disable at all if defined in parent Retroarch configs or
+        # adjust button number below to your controller setup.
+        # cf: https://retropie.org.uk/docs/RetroArch-Configuration/#determining-button-values
+        defaultRAConfig "apple2" "input_game_focus_toggle_btn" "3"
+    fi
 
     addEmulator 0 "$md_id" "apple2" "$md_inst/applewin_libretro.so"
     addSystem "apple2"

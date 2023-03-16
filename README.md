@@ -105,7 +105,10 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [x] - `pico8.sh` - Fantasy Game Emulator - Adds as a new system in RetroPie so you can directly launch carts. **Was told that it works fine, so I'll go with that**
 - [ ] - `pokemini.sh` - Pokemon Mini emulator  - **x86 only**
 - [X] - `ppsspp-dev.sh` - PlayStation Portable emulator PPSSPP - latest development version - **Tested and works on RPi4 (May 2022)**
-- [X] - `supermodel.sh` - Sega Model 3 Arcade emulator  - **Installs Does play, test game are slow**
+
+- [X] - `supermodel-mechafatnick.sh` - Sega Model 3 Arcade emulator  - **Installs Does play, test game are slow**
+- [X] - `supermodel-svn.sh` - Sega Model 3 Arcade emulator  - **Installs Does play, test game are slow**
+
 #### Libretrocores
 
 - [X] - `lr-2048.sh` - 2048 engine - 2048 port for libretro - **Installs, Plays, Runs well**
@@ -297,6 +300,7 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 
 ### Removed broken scripts to RetroPie-Extra-unstable
 
+- [X] - `supermodel.sh` - Sega Model 3 Arcade emulator  - **Installs Does play, test game are slow**
 - [ ] - `lr-craft.sh` - Minecraft engine  - **Installs Fails to start**
 - [ ] - `lr-easyrpg.sh` - RPG Maker 2000/2003 engine - EasyRPG Player interpreter port for libretro - **Fail**
 - [ ] - `lr-ecwolf.sh` - Wolfestein 3D engine - ECWolf port based of Wolf4SDL for libretro - **Installs Fails to start games**
