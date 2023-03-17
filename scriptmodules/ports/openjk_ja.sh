@@ -44,15 +44,19 @@ function build_openjk_ja() {
 }
 
 function install_openjk_ja() {
+    mkdir -p "$md_inst/base"
+
+    local lib
+    for lib in game/jampgame cgame/cgame ui/ui; do
+        cp -v "$md_build/build/codemp/$lib$(_arch_openjk_ja).so" "$md_inst/base"
+    done
+
     md_ret_files=(
         "build/openjkded.$(_arch_openjk_ja)"
         "build/openjk_sp.$(_arch_openjk_ja)"
         "build/openjk.$(_arch_openjk_ja)"
         "build/code/game/jagame$(_arch_openjk_ja).so"
         "build/code/rd-vanilla/rdsp-vanilla_$(_arch_openjk_ja).so"
-        "build/codemp/game/jampgame$(_arch_openjk_ja).so"
-        "build/codemp/cgame/cgame$(_arch_openjk_ja).so"
-        "build/codemp/ui/ui$(_arch_openjk_ja).so"
         "build/codemp/rd-vanilla/rd-vanilla_$(_arch_openjk_ja).so"
     )
 }
@@ -74,13 +78,10 @@ function configure_openjk_ja() {
 
     mkRomDir "ports/jediacademy"
 
-    # link game data to install dir
-    ln -snf "$romdir/ports/jediacademy" "$md_inst/base"
-
-    # link required libs to game dir (required for multiplayer)
-    for lib in ui cgame jampgame; do
-        ln -sf "$md_inst/$lib$(_arch_openjk_ja).so" "$romdir/ports/jediacademy/$lib$(_arch_openjk_ja).so"
-        chown -h $user:$user "$romdir/ports/jediacademy/$lib$(_arch_openjk_ja).so"
+    # softlink game files to base dir
+    local num
+    for num in {0..3}; do
+        ln -sf "$romdir/ports/jediacademy/assets$num.pk3" "$md_inst/base/assets$num.pk3"
     done
 
     cat > "$script" << _EOF_
