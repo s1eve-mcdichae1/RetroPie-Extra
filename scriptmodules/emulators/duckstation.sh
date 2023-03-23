@@ -57,5 +57,5 @@ pushd "$md_inst/duckstation"
 popd
 _EOF_
     chmod +x "$file"
-	chown $user:$user -R "/home/pi/.local/share/duckstation
+	chown $user:$user -R "/home/pi/.local/share/duckstation"
 }
