@@ -287,7 +287,7 @@ function gui_bgm123() {
                             printMsgs "dialog" "Music directory set to default ($datadir/bgm)\n\nSkip track or restart to apply changes."
                             ;;
                         2)
-                            music_dir=$(dialog --backtitle "$__backtitle" --title "Music directory" --dselect "$music_dir" 12 60 2>&1 >/dev/tty)
+                            music_dir=$(dialog --backtitle "$__backtitle" --title "Music directory" --dselect "$datadir/bgm" 12 60 2>&1 >/dev/tty)
                             if [[ -n "$music_dir" ]]; then
                                 iniSet "music_dir" "$music_dir"
                                 printMsgs "dialog" "Music directory set to $music_dir\n\nSkip track or restart to apply changes."
