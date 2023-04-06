@@ -65,7 +65,7 @@ function configure_crispy-doom-system() {
     addSystem "doom" "DOOM" ".pk3 .wad"
 
     moveConfigDir "$home/.local/share/crispy-doom" "$md_conf_root/crispy-doom"
+
     [[ "$md_mode" == "install" ]] && game_data_doom
     [[ "$md_mode" == "remove" ]] && return
-
 }
