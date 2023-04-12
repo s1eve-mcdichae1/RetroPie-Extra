@@ -27,8 +27,8 @@ function sources_easyrpg-player() {
 }
 
 function build_easyrpg-player() {
-     sed -i 's#APPEND_STRING PROPERTY#APPEND PROPERTY#' "/home/pi/RetroPie-Setup/tmp/build/easyrpg-player/builds/cmake/Modules/FindSDL2.cmake"
-    sed -i 's#INTERFACE_LINK_LIBRARIES "${SDL2PC_STATIC_LIBRARIES}")#INTERFACE_INCLUDE_DIRECTORIES "${SDL2PC_STATIC_LIBRARY_DIRS}")#' "/home/pi/RetroPie-Setup/tmp/build/easyrpg-player/builds/cmake/Modules/FindSDL2.cmake"
+     sed -i 's#APPEND_STRING PROPERTY#APPEND PROPERTY#' "$md_build/builds/cmake/Modules/FindSDL2.cmake"
+    sed -i 's#INTERFACE_LINK_LIBRARIES "${SDL2PC_STATIC_LIBRARIES}")#INTERFACE_INCLUDE_DIRECTORIES "${SDL2PC_STATIC_LIBRARY_DIRS}")#' "$md_build/builds/cmake/Modules/FindSDL2.cmake"
     cmake . -DCMAKE_BUILD_TYPE=Release -DPLAYER_BUILD_LIBLCF=ON
     cmake --build .
 
@@ -59,4 +59,5 @@ function configure_easyrpg-player() {
     mkUserDir "$biosdir/rtp/2003"
 
     addPort "$md_id" "easyrpg" "EasyRPG Player" "cd $romdir/ports/easyrpg/games/; RPG2K_RTP_PATH=$biosdir/rtp/2000/ RPG2K3_RTP_PATH=$biosdir/rtp/2003 $md_inst/easyrpg-player"
+
 }
