@@ -16,16 +16,16 @@ rp_module_repo="git https://github.com/Exarkuniv/gzdoom-Pi.git master"
 rp_module_section="exp"
 rp_module_flags=""
 
-function depends_gzdoom-system() {
+function depends_gzdoom() {
      getDepends g++ make cmake libsdl2-dev git zlib1g-dev libbz2-dev libjpeg-dev libfluidsynth-dev libgme-dev libopenal-dev libmpg123-dev libsndfile1-dev libgtk-3-dev timidity nasm libgl1-mesa-dev tar libsdl1.2-dev libglew-dev libvpx-dev libvulkan-dev
 
 }
 
-function sources_gzdoom-system() {
+function sources_gzdoom() {
     gitPullOrClone "$md_build"
 }
 
-function build_gzdoom-system() {
+function build_gzdoom() {
       if [ ! -f "/usr/lib/arm-linux-gnueabihf/libzmusic.so" ]; then
 	gitPullOrClone "$md_build/zmusic" https://github.com/coelckers/ZMusic.git
     cd $md_build/zmusic
