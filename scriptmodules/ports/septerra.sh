@@ -12,7 +12,7 @@
 rp_module_id="septerra"
 rp_module_desc="SR-Septerra - Septerra Core: Legacy of the Creator port "
 rp_module_help="This port requires Septerra Core v1.04.\n\nInstall files .DB, .idx, .ini, .mft, and .conf into $romdir/ports/septerra"
-rp_module_repo="wget https://github.com/M-HT/SR/releases/download/septerra_v1.04.0.7/SepterraCore-Linux-armv7-gnueabihf-v1.04.0.7.tar.gz"
+rp_module_repo="wget https://github.com/M-HT/SR/releases/download/septerra_v1.04.0.7/SepterraCore-Linux-armv7-gnueabihf-v1.04.0.9.tar.gz"
 rp_module_section="exp"
 rp_module_flags="!mali"
 
