@@ -46,8 +46,6 @@ function game_data_opendune() {
 
     if [[ ! -f "$romdir/ports/dune2/DUNE2.EXE" ]]; then
         downloadAndExtract "https://github.com/Exarkuniv/game-data/raw/main/dune-II.zip" "$romdir/ports/dune2/data"
-    mv "$romdir/ports/dune2/dune-ii-the-building-of-a-dynasty/"* "$romdir/ports/dune2/data"
-    rmdir "$romdir/ports/dune2/dune-ii-the-building-of-a-dynasty/"
     chown -R $user:$user "$romdir/ports/dune2/data"
     fi
     #changing the config to work with RetroPie
