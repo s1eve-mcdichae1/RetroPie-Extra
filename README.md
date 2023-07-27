@@ -157,6 +157,7 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 #### Ports
 - [X] - `0ad.sh` - Battle of Survival - is a futuristic real-time strategy game -   **Installs Plays fine**
 - [X] - `abuse.sh` - Classic action game -   **Installs Plays fine, needs keyboard**
+- [X] - `adom.sh` - Ancient Domains of Mystery - a free roguelike by Thomas Biskup -  **A keyboard is required to play (press SHIFT+Q to exit the game). Tested and works on RPi4.**
 - [X] - `augustus.sh` - Enhanced Caesar III source port - **Installs plays fine, needs mouse**
 - [X] - `avp.sh` - AVP - Aliens versus Predator port - **Installs plays fine, needs mouse**
 - [X] - `barrage.sh` - Shooting Gallery action game - **Installs, Plays fine, needs mouse**
