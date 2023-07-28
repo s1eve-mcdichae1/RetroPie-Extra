@@ -11,8 +11,8 @@
 #
 
 rp_module_id="eternity-system"
-rp_module_desc="Chocolate Doom - Enhanced port of the official DOOM source"
-rp_module_licence="GPL2 https://raw.githubusercontent.com/chocolate-doom/chocolate-doom/sdl2-branch/COPYING"
+rp_module_desc="Eternity Doom - Enhanced port of the official DOOM source"
+rp_module_licence="GPL3 https://github.com/team-eternity/eternity/blob/master/COPYING"
 rp_module_help="Please add your iWAD files to $romdir/ports/doom/ and reinstall eternity to create entries for each game to EmulationStation. Run 'chocolate-doom-setup' to configure your controls and options."
 rp_module_repo="git https://github.com/team-eternity/eternity.git master"
 rp_module_section="exp"
