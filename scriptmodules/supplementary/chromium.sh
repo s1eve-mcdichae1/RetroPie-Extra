@@ -33,10 +33,10 @@ function configure_chromium() {
 #!/bin/bash
 xset -dpms s off s noblank
 matchbox-window-manager -use_titlebar no &
-/usr/bin/chromium-browser
+/usr/bin/chromium-browser "\$@"
 _EOF_
     chmod +x "$md_inst/chromium.sh"
 
-    addPort "$md_id" "chromium" "Chromium - Open Source Web Browser" "XINIT: $md_inst/chromium.sh"
+    addPort "$md_id" "chromium" "Chromium - Open Source Web Browser" "XINIT: $md_inst/chromium.sh %ROM%"
     mv "$md_conf_root/$md_id" "$md_conf_root/ports"
 }
