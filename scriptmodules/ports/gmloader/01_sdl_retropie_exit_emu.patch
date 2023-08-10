@@ -1,0 +1,18 @@
+diff --git a/ports/gmloader/sdl2_media.c b/ports/gmloader/sdl2_media.c
+index c5533b1..8be9dc4 100644
+--- a/ports/gmloader/sdl2_media.c
++++ b/ports/gmloader/sdl2_media.c
+@@ -371,6 +372,13 @@ int update_input()
+         if (slot < 0 || slot >= ARRAY_SIZE(yoyo_gamepads))
+             continue;
+ 
++        if (SDL_GameControllerGetButton(controller->controller, SDL_CONTROLLER_BUTTON_START)
++                && (SDL_GameControllerGetButton(controller->controller, SDL_CONTROLLER_BUTTON_BACK)
++                || SDL_GameControllerGetButton(controller->controller, SDL_CONTROLLER_BUTTON_GUIDE))) {
++            // Mimic RetroPie 'Start+Select' or 'Start+Hotkey' behaviour: Quit Emulator
++            return 0;
++        }
++
+         uint8_t new_states[16] = {};
+         int k = 0;
+         new_states[k++] = SDL_GameControllerGetButton(controller->controller, SDL_CONTROLLER_BUTTON_A);

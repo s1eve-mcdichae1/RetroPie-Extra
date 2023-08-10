@@ -1,0 +1,12 @@
+diff --git a/ports/gmloader/sdl2_media.c b/ports/gmloader/sdl2_media.c
+index c5533b1..91361b0 100644
+--- a/ports/gmloader/sdl2_media.c
++++ b/ports/gmloader/sdl2_media.c
+@@ -63,6 +63,7 @@ int init_display(int w, int h)
+                return 0;
+        }
+ 
++    SDL_ShowCursor(SDL_DISABLE);
+     SDL_GL_MakeCurrent(sdl_win, sdl_ctx);
+     SDL_GL_SetSwapInterval(1); //Forced vsync, booo
+     SDL_GL_SwapWindow(sdl_win); //Workaround for missing first frame
