@@ -13,7 +13,7 @@
 rp_module_id="openjk_jo"
 rp_module_desc="openjk_jo - OpenJK: Jedi Outcast (SP)"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/JACoders/OpenJK/master/LICENSE.txt"
-rp_module_help="Copy assets0.pk3  assets1.pk3  assets2.pk3  assets5.pk3 into $romdir/jedioutcast"
+rp_module_help="Copy assets0.pk3  assets1.pk3  assets2.pk3  assets5.pk3 into $romdir/ports/jedioutcast"
 rp_module_repo="git https://github.com/JACoders/OpenJK.git master"
 rp_module_section="exp"
 rp_module_flags=""
