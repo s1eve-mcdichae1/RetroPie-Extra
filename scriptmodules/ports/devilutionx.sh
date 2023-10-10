@@ -14,27 +14,32 @@ rp_module_id="devilutionx"
 rp_module_desc="devilutionx - Diablo Engine"
 rp_module_licence="https://raw.githubusercontent.com/diasurgical/devilutionX/master/LICENSE"
 rp_module_help="Copy your original diabdat.mpq file from Diablo to $romdir/ports/devilutionx."
-rp_module_repo="wget https://github.com/diasurgical/devilutionX/releases/download/1.3.0/devilutionx-linux-armhf.zip"
+rp_module_repo="git  https://github.com/diasurgical/devilutionX.git 1.5.1"
 rp_module_section="exp"
 rp_module_flags="!x86 !mali"
 
 function depends_devilutionx() {
-   getDepends cmake g++ libsdl2-mixer-dev libsdl2-ttf-dev libsodium-dev libfmt-dev
+   getDepends g++ libsdl2-dev libsodium-dev libpng-dev libbz2-dev libgtest-dev libgmock-dev libsdl2-image-dev libfmt-dev smpq
+
 }
 
 function sources_devilutionx() {
-     downloadAndExtract "$md_repo_url" "$md_build"
+     gitPullOrClone 
+}
+
+function build_devilutionx() {
+    cmake -S. -Bbuild -DBUILD_TESTING=OFF
+    cmake --build build -j2
+    md_ret_require="$md_build/build/devilutionx"
 }
 
 function install_devilutionx() {
-    cd devilutionx-linux-armhf
-    dpkg -i ./devilutionx_1.3.0_armhf.deb
     md_ret_files=(
-          	devilutionx-linux-armhf/devilutionx
-		devilutionx-linux-armhf/devilutionx.mpq
-		devilutionx-linux-armhf/README.txt 
-		devilutionx-linux-armhf/LICENSE.CC-BY.txt
-		devilutionx-linux-armhf/LICENSE.OFL.txt)
+        'build/devilutionx'
+	'build/devilutionx.mpq'
+	'README.md'
+	'LICENSE.md'
+    )
 }
 
 function game_data_diablo() {
@@ -46,10 +51,10 @@ function game_data_diablo() {
 }
 
 function configure_devilutionx() {
+        addPort "$md_id" "devilutionx" "devilutionx - Diablo Engine" "$md_inst/devilutionx --data-dir $romdir/ports/devilutionx --save-dir $md_conf_root/devilutionx"
     mkRomDir "ports"
     mkRomDir "ports/devilutionx"
     cp -r "$md_inst/devilutionx.mpq" "$romdir/ports/$md_id"
-    addPort "$md_id" "devilutionx" "devilutionx - Diablo Engine" "$md_inst/devilutionx --data-dir $romdir/ports/devilutionx --save-dir $md_conf_root/devilutionx"
 	
     [[ "$md_mode" == "install" ]] && game_data_diablo
 }
