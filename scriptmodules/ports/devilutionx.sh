@@ -29,7 +29,7 @@ function sources_devilutionx() {
 
 function build_devilutionx() {
     cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF 
-    cmake --build build -j4
+    cmake --build build
     md_ret_require="$md_build/build/devilutionx"
 }
 
