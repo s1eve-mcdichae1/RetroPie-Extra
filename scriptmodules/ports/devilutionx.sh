@@ -19,7 +19,7 @@ rp_module_section="exp"
 rp_module_flags="!x86 !mali"
 
 function depends_devilutionx() {
-   getDepends g++ libsdl2-dev libsodium-dev libpng-dev libbz2-dev libgtest-dev libgmock-dev libsdl2-image-dev libfmt-dev smpq
+   getDepends cmake g++ libsdl2-dev libsodium-dev libpng-dev libbz2-dev libgtest-dev libgmock-dev libsdl2-image-dev libfmt-dev smpq
 
 }
 
