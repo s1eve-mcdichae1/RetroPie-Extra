@@ -30,7 +30,7 @@ function _get_vars_bgm123() {
     )
 
     local var
-    for var in "$@"; do
+    for var in "${!path[@]}"; do
         echo "local $var=${path[$var]}"
     done
 }
@@ -40,11 +40,7 @@ function depends_bgm123() {
 }
 
 function install_bin_bgm123() {
-    local vars=(
-        'config'
-        'menudir'
-    )
-    $(_get_vars_bgm123 "${vars[@]}")
+    $(_get_vars_bgm123)
 
     local file
     local scripts=(
@@ -66,15 +62,7 @@ function install_bin_bgm123() {
 }
 
 function configure_bgm123() {
-    local vars=(
-        'autostart'
-        'bashrc'
-        'onstart'
-        'onend'
-        'config'
-        'menudir'
-    )
-    $(_get_vars_bgm123 "${vars[@]}")
+    $(_get_vars_bgm123)
 
     local share="$datadir/bgm"
     local file
@@ -141,17 +129,7 @@ function configure_bgm123() {
 
 function toggle_bgm123() {
     local file
-    local vars=(
-        'autostart'
-        'bashrc'
-        'onstart'
-        'onend'
-        'config'
-        'init'
-        'killscript'
-        'fadescript'
-    )
-    $(_get_vars_bgm123 "${vars[@]}")
+    $(_get_vars_bgm123)
 
     # attempt to remove any existing bgm config
     for file in "$autostart" "$bashrc" "$onstart" "$onend"; do
@@ -206,14 +184,7 @@ function enable_bgm123() {
 }
 
 function gui_bgm123() {
-    local vars=(
-        'autostart'
-        'config'
-        'init'
-        'killscript'
-        'fadescript'
-    )
-    $(_get_vars_bgm123 "${vars[@]}")
+    $(_get_vars_bgm123)
 
     while true; do
         iniConfig "=" '"' "$config"
