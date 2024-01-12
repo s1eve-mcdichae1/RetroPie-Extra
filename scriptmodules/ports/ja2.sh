@@ -13,7 +13,7 @@
 rp_module_id="ja2"
 rp_module_desc="Jagged Alliance 2"
 rp_module_licence="GPL https://github.com/ja2-stracciatella/ja2-stracciatella"
-rp_module_repo="git https://github.com/ja2-stracciatella/ja2-stracciatella.git v0.18.0"
+rp_module_repo="git https://github.com/ja2-stracciatella/ja2-stracciatella.git v0.21.0"
 rp_module_help=" Copy over game data files and folders from your PC to ports/ja2"
 rp_module_section="exp"
 rp_module_flags="!mali"
