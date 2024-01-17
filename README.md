@@ -340,8 +340,3 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] - Oricutron - Oric 1/Oric Atmos emulator.
 - [X] - sdltrs - Radio Shack TRS-80 Model I/III/4/4P emulator.
 - [X] - ti99sim - Texas Instruments 99A emulator.
-
-## Contact Info / Additional Information
-
-- Discord `Exarkuniv#1078`
-- I'm very active on the RetroPie [forum](https://retropie.org.uk/forum/)
