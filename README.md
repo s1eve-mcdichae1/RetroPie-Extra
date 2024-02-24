@@ -5,9 +5,9 @@
 
 **Someone is sclaping my work with out doing it right. Hes looking at my work and then making the edits to make it look like hes doing the work or thats how i see it**
 
-**you all can blame him for it all up. call me shallow i dont give a shit.**
+**you all can blame him for messing it all up. call me shallow i dont care.**
 
-**Now i know why ZeroJay quit this shit**
+**Now i know why ZeroJay quit**
 
 **apologize for acting childish over this but im still upset about it all**
 
