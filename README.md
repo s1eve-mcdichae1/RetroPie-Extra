@@ -1,15 +1,7 @@
 
 # RetroPie-Extra
 
-**Should I bother?**
-
-**Someone is sclaping my work with out doing it right. Hes looking at my work and then making the edits to make it look like hes doing the work or thats how i see it**
-
-**you all can blame him for messing it all up. call me shallow i dont care.**
-
-**Now i know why ZeroJay quit**
-
-**apologize for acting childish over this but im still upset about it all**
+**Apologize for acting childish over this but im still upset about it all**
 
 This is a **collection of unofficial installation scripts for RetroPie** allowing you to quickly and easily **install emulators, ports and libretrocores** that haven't been included in RetroPie for one reason or another. These scripts can be considered experimental at best. 
 I have found new scripts made by other people and added them to this Repo. I dont take credit for any of them, other then the ones I made
