@@ -1,9 +1,7 @@
 
 # RetroPie-Extra
 
-**Im no longer updating this. Some asshole is sclaping my work with out doing it right. Hes looking at my work and then making the edits to make it look like hes doing the work.**
-**im still updading this, but not here. you all can blame him for fucking it all up. call me shallow i dont give a shit.**
-**Now i know why ZeroJay quit this shit**
+**Apologize for acting childish over this**
 
 This is a **collection of unofficial installation scripts for RetroPie** allowing you to quickly and easily **install emulators, ports and libretrocores** that haven't been included in RetroPie for one reason or another. These scripts can be considered experimental at best. 
 I have found new scripts made by other people and added them to this Repo. I dont take credit for any of them, other then the ones I made
@@ -220,6 +218,7 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] - `lgeneral.sh` - Open Source strategy game - **Installs Runs fine**
 - [X] - `lmarbles.sh` - Open Source Atomix game - **Installs Runs fine, screen is alitte off center**
 - [X] - `ltris.sh` - Open Source Tetris game - **Installs, Plays great**
+- [ ] - `manaplus.sh` - manaplus - 2D MMORPG Client - **x86, cant test, was told it works**
 - [X] - `meritous.sh` - Port of an action-adventure dungeon crawl game - **Installs, Plays great**
 - [X] - `nblood.sh` - Blood source port - **Installs, Plays great**
 - [ ] - `nkaruga.sh` - Ikaruga demake. - **Blocked from installing on Pi4**
