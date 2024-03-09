@@ -3,8 +3,8 @@ This is just meant as a scratchpad for me to keep track of various ideas and req
 Since I'm taking this over I will do my best to take a look at everything. 
 
 My own list:
-- [ ] Add all of my scripts to the install script
-- [ ] Clean up and fix all original scripts from ZeroJay
+- [x] Add all of my scripts to the install script
+- [x] Clean up and fix all original scripts from ZeroJay
 
 From README.md:
  - [x] SDLash/Xash Half-Life engine through glshim.
