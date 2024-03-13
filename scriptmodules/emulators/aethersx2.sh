@@ -11,7 +11,7 @@
 
 rp_module_id="aethersx2"
 rp_module_desc="PS2 emu - AetherSX2"
-rp_module_help="ROM Extensions: .iso .chd\n\nCopy your PS2 roms to $romdir/ps2"
+rp_module_help="ROM Extensions: .iso .chd\n\nCopy your PS2 roms to $romdir/ps2 and the BIOs into /home/RetroPie/BIOS/ps2"
 rp_module_licence="PROP"
 rp_module_repo="git https://github.com/retropieuser/aethersx2.git main"
 rp_module_section="exp"
