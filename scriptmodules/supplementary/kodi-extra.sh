@@ -7,7 +7,7 @@
 # https://github.com/Exarkuniv/RetroPie-Extra
 #
 # See the LICENSE file distributed with this source and at
-# https://raw.githubusercontent.com/ImAQwertyGuy/RetroPie-Extra/master/LICENSE
+# https://raw.githubusercontent.com/Exarkuniv/RetroPie-Extra/master/LICENSE
 #
 
 rp_module_id="kodi-extra"
