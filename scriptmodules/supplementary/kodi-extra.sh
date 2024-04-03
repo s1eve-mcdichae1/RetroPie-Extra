@@ -4,7 +4,7 @@
 # For more information, please visit:
 #
 # https://github.com/RetroPie/RetroPie-Setup
-# https://github.com/ImAQwertyGuy/RetroPie-Extra
+# https://github.com/Exarkuniv/RetroPie-Extra
 #
 # See the LICENSE file distributed with this source and at
 # https://raw.githubusercontent.com/ImAQwertyGuy/RetroPie-Extra/master/LICENSE
