@@ -4,10 +4,10 @@
 # For more information, please visit:
 #
 # https://github.com/RetroPie/RetroPie-Setup
-# https://github.com/Exarkuniv/RetroPie-Extra
+# https://github.com/ImAQwertyGuy/RetroPie-Extra
 #
 # See the LICENSE file distributed with this source and at
-# https://raw.githubusercontent.com/Exarkuniv/RetroPie-Extra/master/LICENSE
+# https://raw.githubusercontent.com/ImAQwertyGuy/RetroPie-Extra/master/LICENSE
 #
 
 rp_module_id="kodi-extra"
@@ -19,13 +19,14 @@ rp_module_flags="!mali"
 function depends_kodi-extra() {
     if isPlatform "rpi"; then
         if [[ "$__depends_mode" == "install" ]]; then
-            # remove old repository
+            # Remove the old pipplware repository
             rm -f /etc/apt/sources.list.d/mene.list
-            echo "deb http://dl.bintray.com/pipplware/dists/jessie/main/binary/ ./" >/etc/apt/sources.list.d/pipplware.list
-            wget -q -O- http://pipplware.pplware.pt/pipplware/key.asc | apt-key add - >/dev/null
+            # Use the official Kodi repository
+            echo "deb http://mirrors.kodi.tv/debian bookworm main" >/etc/apt/sources.list.d/kodi.list
+            wget -qO - http://mirrors.kodi.tv/debian/repo.gpg.key | apt-key add - >/dev/null
         else
-            rm -f /etc/apt/sources.list.d/pipplware.list
-            apt-key del 4096R/BAA567BB >/dev/null
+            rm -f /etc/apt/sources.list.d/kodi.list
+            apt-key del 4096R/AC8F3A7D >/dev/null
         fi
     fi
 }
@@ -36,6 +37,7 @@ function install_bin_kodi-extra() {
 
 function remove_kodi-extra() {
     aptRemove kodi kodi-peripheral-joystick
+    rm -f /etc/apt/sources.list.d/kodi.list
 }
 
 function configure_kodi-extra() {
