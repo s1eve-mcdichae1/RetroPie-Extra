@@ -9,9 +9,6 @@ I have found new scripts made by other people and added them to this Repo. I don
 
 Most of the scripts do work as is. 
 
-**THIS WILL ONLY WORK ON CURRENT RETROPIE/BUSTER 10**
-**Untill RetroPie has a Image for bookworm/bullseye Im not messing with getting anything running on those. DONT ASK**
-
 **I DONT HAVE A X86, SO I DIDNT TEST THOSE SCRIPTS, YOUR ARE ON YOUR OWN**
 
 I have changed the list below to show what has been tested to at least to install. I dont have all the games so I cant test them all 
