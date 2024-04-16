@@ -44,7 +44,7 @@ function configure_aethersx2() {
     [[ "$md_mode" == "remove" ]] && return
 
     moveConfigDir "$home/.config/aethersx2" "$md_conf_root/ps2/Config"
-    mkUserDir "$md_conf_root/ps2/Config"
+    mkUserDir "$md_conf_root/ps2/Config/inis"
     
     # Create the ps2 BIOs directory if it doesn't exist
     if [ ! -d "$home/RetroPie/BIOS/ps2" ]; then
