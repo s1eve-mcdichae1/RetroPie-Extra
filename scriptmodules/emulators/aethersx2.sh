@@ -50,7 +50,7 @@ function configure_aethersx2() {
     if [ ! -d "$home/RetroPie/BIOS/ps2" ]; then
         mkdir -p "$home/RetroPie/BIOS/ps2"
     fi
-
+    chown -R $user:$user "$$home/RetroPie/BIOS/ps2"
     # Create a symbolic link for BIOS
     if [ ! -L "$home/.config/aethersx2/bios" ]; then
         ln -s "$home/RetroPie/BIOS/ps2" "$home/.config/aethersx2/bios"
