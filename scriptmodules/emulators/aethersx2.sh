@@ -18,7 +18,7 @@ rp_module_section="exp"
 rp_module_flags="!all 64bit"
 
 function depends_aethersx2() {
-    local depends=(matchbox-window-manager xorg xserver-xorg-input-all mesa-vulkan-drivers)
+    local depends=(matchbox-window-manager xorg xserver-xorg-input-all mesa-vulkan-drivers pulseaudio)
 
     getDepends ${depends[@]}
 }
