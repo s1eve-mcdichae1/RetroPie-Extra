@@ -19,7 +19,7 @@ rp_module_section="exp"
 rp_module_flags="!mali !x86"
 
 function depends_chocolate-doom-system() {
-    getDepends libsdl2-dev libsdl2-net-dev libsdl2-mixer-dev libsamplerate0-dev libpng-dev python-pil automake autoconf unzip
+    getDepends libsdl2-dev libsdl2-net-dev libsdl2-mixer-dev libsamplerate0-dev libpng-dev python3-pil automake autoconf unzip
 }
 
 function sources_chocolate-doom-system() {

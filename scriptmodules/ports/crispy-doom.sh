@@ -19,7 +19,7 @@ rp_module_section="exp"
 rp_module_flags="!mali !x86"
 
 function depends_crispy-doom() {
-    getDepends libsdl2-dev libsdl2-mixer-dev libsdl2-net-dev python-pil automake autoconf
+    getDepends libsdl2-dev libsdl2-mixer-dev libsdl2-net-dev python3-pil automake autoconf
 }
 
 function sources_crispy-doom() {
