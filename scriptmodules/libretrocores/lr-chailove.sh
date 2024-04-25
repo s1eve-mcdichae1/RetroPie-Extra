@@ -39,5 +39,5 @@ function configure_lr-chailove() {
     ensureSystemretroconfig "love"
 
     addEmulator 1 "$md_id" "love" "$md_inst/chailove_libretro.so"
-    addSystem "love"
+    addSystem "love" ".chai .chailove"
 }
