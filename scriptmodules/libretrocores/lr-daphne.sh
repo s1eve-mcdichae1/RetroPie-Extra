@@ -39,7 +39,7 @@ function install_lr-daphne() {
 }
 
 function configure_lr-daphne() {
-    mkRomDir "$romdir/daphne"
+    mkRomDir "daphne"
 
     addEmulator 0 "$md_id" "daphne" "$md_inst/daphne_libretro.so"
     addSystem "daphne" "Daphne" ".zip"

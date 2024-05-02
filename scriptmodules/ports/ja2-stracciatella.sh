@@ -56,5 +56,6 @@ function install_ja2-stracciatella() {
 }
 
 function configure_ja2-stracciatella() {
+    mkRomDir "ports/ja2"
     addPort "$md_id" "ja2-stracciatella" "Jagged Alliance 2" "$md_inst/ja2 -fullscreen"
 }
