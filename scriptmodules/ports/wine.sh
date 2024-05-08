@@ -19,7 +19,7 @@ rp_module_flags="rpi4"
 #       X86 platform requires some modification in the Ports scripts so that the custom Mesa path is removed.
 
 function _latest_ver_wine() {
-    echo "6.0.4"
+    echo "7.0.0"
 }
 
 function _release_type_wine() {
