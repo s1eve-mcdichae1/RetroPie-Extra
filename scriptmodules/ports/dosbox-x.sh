@@ -15,7 +15,7 @@ rp_module_help="ROM Extensions: .bat .com .exe .sh .conf\n\nCopy your DOS games 
 rp_module_licence="GNU https://raw.githubusercontent.com/joncampbell123/dosbox-x/master/COPYING"
 rp_module_repo="git https://github.com/joncampbell123/dosbox-x.git master"
 rp_module_section="exp"
-rp_module_flags=""
+rp_module_flags="!all rpi4 rpi3"
 
 function depends_dosbox-x() {
      getDepends automake libncurses-dev nasm libsdl-net1.2-dev libpcap-dev libfluidsynth-dev ffmpeg libavdevice58 libavformat-dev libswscale-dev libavcodec-dev xorg matchbox

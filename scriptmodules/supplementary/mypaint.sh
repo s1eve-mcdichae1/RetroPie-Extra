@@ -14,7 +14,7 @@ rp_module_id="mypaint"
 rp_module_desc="mypaint easy-to-use painting program"
 rp_module_licence="mypaint.org"
 rp_module_section="exp"
-rp_module_flags="!mali !x86"
+rp_module_flags="!mali !x86 !rpi5"
 
 function depends_mypaint() {
     getDepends xorg matchbox

@@ -15,7 +15,7 @@ rp_module_help="ROM Extensions: .iso .chd\n\nCopy your PS2 roms to $romdir/ps2"
 rp_module_licence="PROP"
 rp_module_repo="git https://github.com/retropieuser/aethersx2.git main"
 rp_module_section="exp"
-rp_module_flags="!all 64bit"
+rp_module_flags="!all 64bit !rpi4"
 
 function depends_aethersx2() {
     local depends=(matchbox-window-manager xorg xserver-xorg-input-all mesa-vulkan-drivers pulseaudio pipewire-media-session-pulseaudio)

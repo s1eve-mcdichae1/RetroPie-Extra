@@ -16,7 +16,7 @@ rp_module_licence="GPL2 https://raw.githubusercontent.com/LTCHIPS/rottexpr/maste
 rp_module_help=
 rp_module_repo="git https://github.com/LTCHIPS/rottexpr.git master"
 rp_module_section="exp"
-rp_module_flags="!mali !x86"
+rp_module_flags="!mali !x86 !all rpi4 rpi3"
 
 function depends_rott-huntbgin() {
     getDepends libsdl2-dev libsdl2-mixer-dev fluidsynth libfluidsynth1 libfluidsynth-dev fluid-soundfont-gs fluid-soundfont-gm

@@ -16,7 +16,7 @@ rp_module_help="ROM Extension: .ldb\n\nYou need to unzip your RPG Maker games in
 rp_module_licence="GPL3 https://raw.githubusercontent.com/EasyRPG/Player/master/COPYING"
 rp_module_repo="git https://github.com/EasyRPG/Player.git master"
 rp_module_section="exp"
-rp_module_flags="!mali"
+rp_module_flags="!mali !all rpi4 rpi3 "
 
 function depends_easyrpg-player() {
     getDepends cmake autoconf automake libtool doxygen libsdl2-dev libsdl2-mixer-dev libpng-dev libfreetype6-dev libboost-dev libpixman-1-dev libmpg123-dev libwildmidi-dev libvorbis-dev libopusfile-dev libsndfile1-dev libxmp-dev libspeexdsp-dev libharfbuzz-dev libfmt-dev zlib1g-dev libraspberrypi-dev libraspberrypi-bin expat libexpat1-dev libexpat-ocaml-dev

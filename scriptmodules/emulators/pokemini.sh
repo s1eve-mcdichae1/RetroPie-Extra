@@ -17,7 +17,7 @@ rp_module_help="ROM Extensions: .min .MIN\n\nYou will need to add the ROM extens
 rp_module_licence="GPL https://sourceforge.net/p/pokemini/code/ci/master/tree/LICENSE"
 rp_module_repo="git https://git.code.sf.net/p/pokemini/code master"
 rp_module_section="exp"
-rp_module_flags="!mali !kms"
+rp_module_flags="!mali !kms !rpi5"
 
 function depends_pokemini() {
     getDepends zlib1g zlib1g-dev libsdl2-dev

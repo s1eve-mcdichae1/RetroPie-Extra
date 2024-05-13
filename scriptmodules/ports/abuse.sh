@@ -15,7 +15,7 @@ rp_module_desc="Abuse"
 rp_module_licence="GPL https://raw.githubusercontent.com/Xenoveritas/abuse/master/COPYING"
 rp_module_repo="wget http://abuse.zoy.org/raw-attachment/wiki/download/abuse-0.8.tar.gz"
 rp_module_section="exp"
-rp_module_flags="!mali"
+rp_module_flags="!mali !all rpi4 rpi3"
 
 # abuse-lib & abuse-sfx will pull in the older abuse package which only works under X
 function depends_abuse() {

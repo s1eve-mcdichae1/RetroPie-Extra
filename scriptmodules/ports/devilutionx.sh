@@ -16,7 +16,7 @@ rp_module_licence="https://raw.githubusercontent.com/diasurgical/devilutionX/mas
 rp_module_help="Copy your original diabdat.mpq file from Diablo to $romdir/ports/devilutionx."
 rp_module_repo="git  https://github.com/diasurgical/devilutionX.git 1.5.1"
 rp_module_section="exp"
-rp_module_flags="!x86 !mali"
+rp_module_flags="!x86 !mali !all rpi4 rpi3"
 
 function depends_devilutionx() {
    getDepends cmake g++ libsdl2-dev libsodium-dev libpng-dev libbz2-dev libgtest-dev libgmock-dev libsdl2-image-dev libfmt-dev smpq

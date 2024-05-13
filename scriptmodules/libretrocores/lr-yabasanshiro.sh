@@ -16,7 +16,7 @@ rp_module_help="ROM Extensions: .iso .cue .zip .ccd .mds\n\nCopy your Sega Satur
 rp_module_licence="GPL2 https://raw.githubusercontent.com/ALLRiPPED/yabause/yabasanshiro/LICENSE"
 rp_module_repo="git https://github.com/ALLRiPPED/yabause.git yabasanshiro 73c67668"
 rp_module_section="exp"
-rp_module_flags="!all rpi4"
+rp_module_flags="!all rpi4 !rpi5"
 
 function sources_lr-yabasanshiro() {
     gitPullOrClone

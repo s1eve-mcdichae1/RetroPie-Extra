@@ -35,7 +35,7 @@ On winecfg, go to Graphics Tab and set Emulate a virtual desktop to 800x600. The
 rp_module_licence="MIT https://raw.githubusercontent.com/jmcerrejon/PiKISS/master/LICENSE.md"
 rp_module_repo="file https://github.com/Exarkuniv/Rpi-pikiss-binary/raw/Master/diablo2-rpi.tar.gz"
 rp_module_section="exp"
-rp_module_flags="!armv6 rpi4"
+rp_module_flags="!armv6 !all rpi4"
 
 function depends_diablo2() {
     getDepends xorg wine

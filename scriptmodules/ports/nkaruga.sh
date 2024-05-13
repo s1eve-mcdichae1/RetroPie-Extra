@@ -15,7 +15,7 @@ rp_module_desc="nKaruga - Ikaruga demake"
 rp_module_licence="MIT https://github.com/gameblabla/nKaruga/blob/master/COPYING"
 rp_module_repo="git https://github.com/gameblabla/nKaruga.git master"
 rp_module_section="exp"
-rp_module_flags="!mali !kms"
+rp_module_flags="!mali !kms !all rpi4 rpi3"
 
 function depends_nkaruga() {
     getDepends libsdl2-dev libsdl2-mixer-dev

@@ -16,7 +16,7 @@ rp_module_help="Place your .pak files in $romdir/openbor."
 rp_module_licence="BSD https://raw.githubusercontent.com/crcerror/OpenBOR-Raspberry/master/LICENSE"
 rp_module_repo="git https://github.com/crcerror/OpenBOR-Raspberry.git master"
 rp_module_section="exp"
-rp_module_flags="!mali !x11"
+rp_module_flags="!mali !x11 !rpi5"
 
 function depends_openbor-v6510() {
     getDepends libsdl2-gfx-dev libvorbisidec-dev libvpx-dev libogg-dev libsdl2-gfx-1.0-0 libvorbisidec1

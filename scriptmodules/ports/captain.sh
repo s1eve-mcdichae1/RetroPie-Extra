@@ -15,7 +15,7 @@ rp_module_help="Controls: Arrow: Move, CTRL: Action, ENTER: Change character whe
 rp_module_licence="MIT https://raw.githubusercontent.com/jmcerrejon/PiKISS/master/LICENSE.md"
 rp_module_repo="file https://github.com/Exarkuniv/Rpi-pikiss-binary/raw/Master/captain_s.tar.gz"
 rp_module_section="exp"
-rp_module_flags="!armv6 rpi4"
+rp_module_flags="!armv6 !all rpi4"
 
 function depends_captain_s() {
     getDepends xorg liballegro4.4 libpng12-0

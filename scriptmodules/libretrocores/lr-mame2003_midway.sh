@@ -16,6 +16,7 @@ rp_module_help="ROM Extension: .zip\n\nCopy your MAME roms to either $romdir/mam
 rp_module_licence="NONCOM https://raw.githubusercontent.com/libretro/mame2003_midway/master/docs/mame.txt"
 rp_module_repo="git https://github.com/libretro/mame2003_midway.git master"
 rp_module_section="exp"
+rp_module_flags=" !rpi5"
 
 function sources_lr-mame2003_midway() {
     gitPullOrClone

@@ -15,7 +15,7 @@ rp_module_desc="sm64ex - Super Mario 64 PC Port (Pi 4 only)"
 rp_module_help="To compile properly, this port requires a Super Mario 64 ROM in z64 format.\n\nPlace your Super Mario 64 ROM into $home with the name baserom.<VERSION>.z64\nwhere VERSION can be us, eu or jp depending on the ROM you are using.\n\nFor example, a US Super Mario 64 ROM should be placed at /home/pi/baserom.us.z64."
 rp_module_repo="git https://github.com/sm64pc/sm64ex.git nightly"
 rp_module_section="exp"
-rp_module_flags="!mali"
+rp_module_flags="!mali !all rpi4 rpi3"
 
 function depends_sm64ex() {
     getDepends git python3 libaudiofile-dev libglew-dev libglfw3-dev libusb-dev libsdl2-dev

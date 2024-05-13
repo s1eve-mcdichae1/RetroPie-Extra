@@ -16,7 +16,7 @@ rp_module_licence="Unknown"
 rp_module_help=""
 rp_module_repo="file http://www.zeldaroth.fr/fichier/NSQ/linux/ZeldaNSQ-src-linux.zip"
 rp_module_section="exp"
-rp_module_flags="!mali !x86"
+rp_module_flags="!mali !x86 !all rpi4 rpi3"
 
 function depends_zeldansq() {
     getDepends libsdl1.2-dev libsdl-gfx1.2-dev libsdl-mixer1.2-dev libsdl-image1.2-dev unzip

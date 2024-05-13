@@ -16,7 +16,7 @@ rp_module_help="A keyboard is required to exit the game."
 rp_module_licence="freeware https://web.archive.org/web/20160507085617/http://xout.blackened-interactive.com/ProtoType/Prototype.html"
 rp_module_repo="git https://github.com/ptitSeb/prototype.git master 12d2de8"
 rp_module_section="exp"
-rp_module_flags=""
+rp_module_flags="!all rpi4 rpi3"
 
 function depends_prototype() {
     getDepends libsdl2-dev libsdl2-mixer-dev

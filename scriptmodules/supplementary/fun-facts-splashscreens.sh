@@ -21,7 +21,7 @@ rp_module_help+="\n\nExtras:"
 rp_module_help+="\n- Set 'Enable at boot' to create a new Fun Facts! Splashscreen automatically at each system boot."
 rp_module_help+="\n\nMore info at https://github.com/hiulit/RetroPie-Fun-Facts-Splashscreens"
 rp_module_section="exp"
-rp_module_flags="noinstclean !x86 !osmc !xbian !mali !kms"
+rp_module_flags="noinstclean !x86 !osmc !xbian !mali !kms !rpi5"
 
 function depends_fun-facts-splashscreens() {
     getDepends "imagemagick"

@@ -14,7 +14,7 @@ rp_module_id="sorrv2"
 rp_module_desc="Streets of Rage Remake useing engine by BennuGD"
 rp_module_help="Please copy your SorR.dat file along with the mod and palettes folders into ports/sorr. Runs a slow in fullscreen, best to be in windowed mode"
 rp_module_section="exp"
-rp_module_flags="!x86 !x11 !mali"
+rp_module_flags="!x86 !x11 !mali !all rpi4 rpi3"
 
 function depends_sorrv2() {
     getDepends libsdl-mixer1.2 libpng12-0 xorg

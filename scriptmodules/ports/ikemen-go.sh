@@ -14,7 +14,7 @@ rp_module_desc="I.K.E.M.E.N GO - Clone of M.U.G.E.N to the Go programming langua
 rp_module_licence="MIT https://raw.githubusercontent.com/ikemen-engine/Ikemen-GO/master/License.txt"
 rp_module_help="Copy characters, stages, screenpacks, etc. to $romdir/ports/ikemen-go\n\nConfig files can be found at $configdir/ports/ikemen-go/save"
 rp_module_repo="git https://github.com/SuperFromND/Ikemen-GO.git 98point2"
-rp_module_section="exp"
+rp_module_section="exp !all rpi4 rpi3"
 
 function depends_ikemen-go() {
     rp_callModule golang-1.17 install_bin

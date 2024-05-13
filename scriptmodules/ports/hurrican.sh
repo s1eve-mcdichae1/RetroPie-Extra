@@ -16,7 +16,7 @@ rp_module_help="After installation, select game from the Ports system.\n\nSelect
 rp_module_repo="git https://github.com/HurricanGame/Hurrican.git master"
 rp_module_licence="MIT https://raw.githubusercontent.com/HurricanGame/Hurrican/master/LICENSE"
 rp_module_section="exp"
-rp_module_flags="!all rpi4"
+rp_module_flags="!all rpi4 rpi3"
 
 function depends_hurrican() {
     getDepends libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libepoxy-dev cmake

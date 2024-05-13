@@ -16,7 +16,7 @@ rp_module_licence="GNU https://github.com/OpenRCT2/OpenRCT2/blob/develop/licence
 rp_module_help="Copy g1.dat, The 772 default RCT2 objects. /n/nEasy to identify by sorting on date, /n/nsince all 772 have a similar timestamp (usually from 2002 or 2003/n/n Required: If you use the OpenRCT2 title sequence, no scenarios are needed./n/n Six Flags Magic Mountain.SC6/n/n is needed for the RCT2 title sequence."
 rp_module_repo="git https://github.com/OpenRCT2/OpenRCT2.git develop 618c5bd"
 rp_module_section="exp"
-rp_module_flags="noinstclean"
+rp_module_flags="noinstclean !all rpi4 rpi3"
 
 
 function depends_openrct2() {

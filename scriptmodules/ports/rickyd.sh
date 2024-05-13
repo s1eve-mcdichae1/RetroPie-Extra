@@ -15,7 +15,7 @@ rp_module_desc="rickyd - Port of Rick Dangerous"
 rp_module_licence="GPL https://sourceforge.net/p/rickyd/code/ci/master/tree/COPYING"
 rp_module_repo="git git://git.code.sf.net/p/rickyd/code master"
 rp_module_section="exp"
-rp_module_flags="!mali !kms"
+rp_module_flags="!mali !kms !all rpi4 rpi3"
 
 function depends_rickyd() {
     getDepends libsdl2-dev libsdl2-mixer-dev libsdl2-image-dev libsdl2-ttf-dev automake autoconf

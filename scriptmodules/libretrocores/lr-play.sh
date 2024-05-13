@@ -16,7 +16,7 @@ rp_module_help="ROM Extensions: .chd .iso .isz .cso .bin .elf\n\nCopy your PlayS
 rp_module_licence="MIT https://raw.githubusercontent.com/libretro/Play-/master/License.txt"
 rp_module_repo="git https://github.com/libretro/Play-.git master"
 rp_module_section="exp"
-rp_module_flags="!all 64bit"
+rp_module_flags="!all 64bit !rpi5"
 
 function depends_lr-play() {
     local depends=(cmake libalut-dev)

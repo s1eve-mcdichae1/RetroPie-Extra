@@ -14,6 +14,7 @@ rp_module_desc="Scraper for EmulationStation by kiro"
 rp_module_licence="GNU https://github.com/zayamatias/retroscraper-rpie/blob/main/LICENSE"
 rp_module_repo="git https://github.com/zayamatias/retroscraper-rpie.git main"
 rp_module_section="exp"
+rp_module_flags="!mali !x86 !rpi5"
 
 function depends_retroscraper() {
     local depends=(python3)

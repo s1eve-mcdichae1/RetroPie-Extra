@@ -16,7 +16,7 @@ rp_module_help="ROM Extensions: .col .cv .bin .rom .zip .7z\n\nCopy your ColecoV
 rp_module_licence="GPL3 https://git.libretro.com/libretro/gearcoleco/blob/main/LICENSE"
 rp_module_repo="git https://git.libretro.com/libretro/gearcoleco.git main"
 rp_module_section="exp"
-rp_module_flags=""
+rp_module_flags="!rpi5"
 
 function sources_lr-gearcoleco() {
     gitPullOrClone

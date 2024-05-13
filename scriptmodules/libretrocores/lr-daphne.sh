@@ -16,6 +16,7 @@ rp_module_help="ROM Extension: .zip\n\nCopy your Daphne roms to $romdir/daphne. 
 rp_module_licence="NONCOM https://raw.githubusercontent.com/libretro/daphne/master/docs/mame.txt"
 rp_module_repo="git https://github.com/libretro/daphne.git master"
 rp_module_section="exp"
+rp_module_flags=" !rpi5"
 
 function sources_lr-daphne() {
     gitPullOrClone

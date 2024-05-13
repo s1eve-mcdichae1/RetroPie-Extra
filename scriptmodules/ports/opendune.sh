@@ -16,7 +16,7 @@ rp_module_help="Please put your data files in the roms/ports/opendune/data folde
 rp_module_licence="GNU https://github.com/OpenDUNE/OpenDUNE/blob/master/COPYING"
 rp_module_repo="git https://github.com/OpenDUNE/OpenDUNE.git master"
 rp_module_section="exp"
-rp_module_flags="noinstclean"
+rp_module_flags="noinstclean !all rpi4"
 
 
 function depends_opendune() {

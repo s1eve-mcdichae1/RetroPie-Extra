@@ -19,7 +19,7 @@ rp_module_help="F11 - Switches between Window and Full Screen.
 rp_module_licence="GNU https://www.gnu.org/licenses/gpl-3.0"
 rp_module_repo="file https://github.com/Exarkuniv/Rpi-pikiss-binary/raw/Master/temptations-rpi.tar.gz"
 rp_module_section="exp"
-rp_module_flags="!armv6 rpi4"
+rp_module_flags="!armv6 !all rpi4 rpi3"
 
 function depends_temptations() {
     getDepends libsdl2-image-2.0-0 libsdl2-mixer-2.0-0 libsdl2-dev libsdl2-mixer-dev libsdl2-image-dev 

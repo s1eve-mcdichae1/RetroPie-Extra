@@ -15,7 +15,7 @@ rp_module_help="Copy the subdirectories ANIM, DATA, MAPS and MUSIC (some of them
 rp_module_licence="MIT https://raw.githubusercontent.com/jmcerrejon/PiKISS/master/LICENSE.md"
 rp_module_repo="file https://github.com/Exarkuniv/Rpi-pikiss-binary/raw/Master/fheroes2_0.83_rpi.tar.gz"
 rp_module_section="exp"
-rp_module_flags="!armv6 rpi4"
+rp_module_flags="!armv6 !all rpi4 rpi3"
 
 function depends_fheroes2() {
     getDepends xorg fluidr3mono-gm-soundfont fluid-soundfont-gm libsdl2-mixer-2.0-0 libsdl2-image-2.0-0 libsdl2-ttf-2.0-0

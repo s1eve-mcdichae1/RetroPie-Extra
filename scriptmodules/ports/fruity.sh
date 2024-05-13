@@ -13,7 +13,7 @@ rp_module_id="fruity"
 rp_module_desc="Fruity - inspired by the Kaiko classic GemX"
 rp_module_licence="GPL2 https://www.retroguru.com/legal/"
 rp_module_section="exp"
-rp_module_flags="!mali !x86"
+rp_module_flags="!mali !x86 !all rpi4 rpi3"
 
 function depends_fruity() {
     getDepends libsdl-mixer1.2

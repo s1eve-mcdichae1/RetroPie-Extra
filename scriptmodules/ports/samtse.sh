@@ -16,7 +16,7 @@ rp_module_help="NEED Serious Sam Classic version of this game\n Copy all *.gro f
 \nHelp (folder)\nSE1_00.gro\nSE1_00_Extra.gro\nSE1_00_ExtraTools.gro\nSE1_00_Levels.gro\nSE1_00_Logo.gro\nSE1_00_Music.gro\n1_04_patch.gro\n1_07_tools.gro"
 rp_module_repo="git https://github.com/tx00100xt/SeriousSamClassic.git main"
 rp_module_section="exp"
-rp_module_flags=""
+rp_module_flags="!all rpi4 rpi3"
 
 function depends_samtse() {
     getDepends libogg-dev libvorbis-dev xorg

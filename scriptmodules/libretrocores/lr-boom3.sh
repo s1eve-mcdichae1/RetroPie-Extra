@@ -16,7 +16,7 @@ rp_module_help="ROM Extensions: .pk4\n\nCopy your Doom 3 roms to $romdir/ports/d
 rp_module_licence="GPL3 https://raw.githubusercontent.com/libretro/boom3/master/COPYING.txt"
 rp_module_repo="git https://github.com/libretro/boom3.git master"
 rp_module_section="exp"
-rp_module_flags="!all 64bit"
+rp_module_flags="!all 64bit !rpi5"
 
 function depends_lr-boom3() {
     getDepends libjpeg-turbo8-dev libvorbis-dev libogg-dev libopenal-dev libsdl2-dev libcurl4-openssl-dev

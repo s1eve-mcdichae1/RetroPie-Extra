@@ -15,7 +15,7 @@ rp_module_desc="mpv - Video Player"
 rp_module_help="This will set up TV Shows and Movies as systems on your wheel. You can throw your tv shows into $romdir/tvshows and your movies into $romdir/movies or even mount your network drives to play remotely.\n\nROM Extensions: .avi .m4v .mkv .mov .mp4 .mpg .wmv"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/mpv-player/mpv/master/Copyright"
 rp_module_section="exp"
-rp_module_flags="!mali !x86"
+rp_module_flags="!mali !x86 !rpi5"
 
 function install_bin_mpv() {
     aptInstall mpv

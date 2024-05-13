@@ -15,7 +15,7 @@ rp_module_desc="Minecraft engine - Craft port for libretro"
 rp_module_licence="MIT https://raw.githubusercontent.com/libretro/Craft/master/LICENSE.md"
 rp_module_repo="git https://github.com/libretro/Craft master"
 rp_module_section="exp"
-rp_module_flags=""
+rp_module_flags="!rpi5"
 
 function sources_lr-craft() {
     gitPullOrClone

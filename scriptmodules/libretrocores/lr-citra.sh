@@ -16,7 +16,7 @@ rp_module_help="OpenGL >= 3.3 is required.\n\nROM Extensions: .3ds .3dsx .elf .a
 rp_module_licence="GPL2 https://raw.githubusercontent.com/libretro/citra/master/license.txt"
 rp_module_repo="git https://github.com/libretro/citra.git master"
 rp_module_section="exp"
-rp_module_flags="!all 64bit"
+rp_module_flags="!all 64bit !rpi5"
 
 function depends_lr-citra() {
     getDepends cmake

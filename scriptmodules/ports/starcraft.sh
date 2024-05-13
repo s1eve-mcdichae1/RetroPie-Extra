@@ -15,7 +15,7 @@ rp_module_help="Thanks to PI Labs, Notaz, and Blizzard for release free this gam
 rp_module_licence="MIT https://raw.githubusercontent.com/jmcerrejon/PiKISS/master/LICENSE.md"
 rp_module_repo="file https://archive.org/download/starcraft-rpi.7z/starcraft-rpi.7z"
 rp_module_section="exp"
-rp_module_flags="!armv6 rpi4"
+rp_module_flags="!armv6 !all rpi4 rpi3"
 
 function depends_starcraft() {
     getDepends xorg wine p7zip-full matchbox

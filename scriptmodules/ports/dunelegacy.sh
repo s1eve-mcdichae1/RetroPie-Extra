@@ -15,7 +15,7 @@ rp_module_help="Please put your data files in the roms/ports/dunelegacy/data fol
 rp_module_licence="GNU 2.0 https://sourceforge.net/p/dunedynasty/dunedynasty/ci/master/tree/COPYING"
 rp_module_repo="git git://dunelegacy.git.sourceforge.net/gitroot/dunelegacy/dunelegacy master"
 rp_module_section="exp"
-rp_module_flags="!mali"
+rp_module_flags="!mali !all rpi4 rpi3"
 
 function depends_dunelegacy() {
     getDepends autotools-dev libsdl2-mixer-dev libopusfile0 libsdl2-mixer-2.0-0 libsdl2-ttf-dev xorg matchbox-window-manager x11-xserver-utils  libfluidsynth-dev  libfluidsynth1 fluidsynth

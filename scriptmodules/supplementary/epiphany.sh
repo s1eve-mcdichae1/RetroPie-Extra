@@ -14,7 +14,7 @@ rp_module_id="epiphany"
 rp_module_desc="epiphany lightweight web browser"
 rp_module_licence="https://github.com/GNOME/epiphany"
 rp_module_section="exp"
-rp_module_flags="!mali !x86"
+rp_module_flags="!mali !x86 !rpi5"
 
 function depends_epiphany() {
     getDepends xorg matchbox

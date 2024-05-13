@@ -14,7 +14,7 @@ rp_module_id="pico8"
 rp_module_desc="pico8 - The Fantasy Game Console"
 rp_module_help="Place your purchased pico8 zip file in $home/pico8.zip and add games to $romdir/pico8."
 rp_module_section="exp"
-rp_module_flags="!mali !x11"
+rp_module_flags="!mali !x11 !rpi5"
 
 function depends_pico8() {
     getDepends wiringpi unzip

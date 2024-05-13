@@ -15,7 +15,7 @@ rp_module_desc="omxplayer - Video Player"
 rp_module_help="Put your videos into $"
 rp_module_licence="GPL2 https://www.gnu.org/licenses/gpl-2.0.txt"
 rp_module_section="exp"
-rp_module_flags="!mali !x86"
+rp_module_flags="!mali !x86 !rpi5"
 
 function install_bin_omxplayer() {
     aptInstall omxplayer

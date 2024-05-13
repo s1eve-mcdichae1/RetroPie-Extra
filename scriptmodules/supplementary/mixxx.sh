@@ -14,7 +14,7 @@ rp_module_id="mixxx"
 rp_module_desc="Mixxx DJ Mixing Software App"
 rp_module_licence="www.mixxx.org"
 rp_module_section="exp"
-rp_module_flags="!mali !x86"
+rp_module_flags="!mali !x86 !rpi5"
 
 function depends_mixxx() {
     getDepends xorg matchbox

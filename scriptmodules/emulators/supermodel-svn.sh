@@ -32,7 +32,7 @@ WideBackground=0\n\
 \n\n\
 "
 rp_module_section="exp"
-rp_module_flags=""
+rp_module_flags="!rpi5"
 
 function depends_supermodel-svn() {
     getDepends xorg subversion libsdl2-dev libsdl2-net-dev

@@ -16,7 +16,7 @@ rp_module_help="ROM Extension: .ldb\n\nYou need to unzip your RPG Maker games in
 rp_module_licence="GPL3 https://raw.githubusercontent.com/libretro/easyrpg-libretro/master/COPYING"
 rp_module_repo="git https://github.com/libretro/easyrpg-libretro.git master"
 rp_module_section="exp"
-rp_module_flags=""
+rp_module_flags=" !rpi5"
 
 function depends_lr-easyrpg() {
     depends_easyrpg-player

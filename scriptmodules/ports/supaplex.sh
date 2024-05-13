@@ -15,7 +15,7 @@ rp_module_help="play the game"
 rp_module_licence="GNU https://www.gnu.org/licenses/gpl-3.0"
 rp_module_repo="file https://github.com/Exarkuniv/Rpi-pikiss-binary/raw/Master/open-supaplex-rpi.tar.gz"
 rp_module_section="exp"
-rp_module_flags="!armv6 rpi4"
+rp_module_flags="!armv6 !all rpi4 rpi3"
 
 function depends_supaplex() {
     getDepends libsdl2-mixer-2.0-0 

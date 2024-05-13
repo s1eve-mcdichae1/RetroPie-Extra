@@ -13,7 +13,7 @@ rp_module_id="xash3d-fwgs"
 rp_module_desc="xash3d-fwgs - Half-Life Engine Port"
 rp_module_help="Please add your full version Half-Life data files (folders /valve, /bshift and /gearbox) to $romdir/ports/xash3d-fwgs/ to play."
 rp_module_section="exp"
-rp_module_flags="!mali !x86"
+rp_module_flags="!mali !x86 !all rpi4 rpi3"
 
 function depends_xash3d-fwgs() {
     getDepends libsdl2-dev libfontconfig1-dev libfreetype6-dev

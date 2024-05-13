@@ -15,7 +15,7 @@ rp_module_desc="Rocks'n'Diamonds - Emerald Mine Clone"
 rp_module_licence=" GNU https://git.artsoft.org/?p=rocksndiamonds.git;a=blob;f=COPYING;hb=HEAD"
 rp_module_repo="git https://git.artsoft.org/rocksndiamonds.git"
 rp_module_section="exp"
-rp_module_flags="!mali"
+rp_module_flags="!mali !all rpi4 rpi3"
 
 function depends_rocksndiamonds() {
     getDepends libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-net-dev

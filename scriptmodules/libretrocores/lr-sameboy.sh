@@ -16,6 +16,7 @@ rp_module_help="ROM Extensions: .gb .gbc .zip .7z\n\nCopy your Gameboy roms to $
 rp_module_licence="MIT https://raw.githubusercontent.com/libretro/SameBoy/buildbot/LICENSE"
 rp_module_repo="git https://github.com/libretro/SameBoy.git buildbot"
 rp_module_section="exp x86=opt"
+rp_module_flags="!rpi5"
 
 function depends_lr-sameboy() {
     # For lr-Sameboy

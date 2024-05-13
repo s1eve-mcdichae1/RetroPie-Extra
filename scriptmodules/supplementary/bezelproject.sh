@@ -14,6 +14,7 @@ rp_module_id="bezelproject"
 rp_module_desc="Easily set up the Bezel Project"
 rp_module_help="Follow the instructions on the dialogs to configure the Bezel Project"
 rp_module_section="exp"
+rp_module_flags="!mali !x86 !rpi5"
 
 function sources_bezelproject() {
     wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh
