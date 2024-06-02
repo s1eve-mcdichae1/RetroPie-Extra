@@ -27,6 +27,7 @@ function _get_vars_bgm123() {
         [init]="$md_inst/bgm_start.sh"
         [killscript]="$md_inst/bgm_stop.sh"
         [fadescript]="$md_inst/bgm_fade.sh"
+        [share]="$datadir/bgm"
     )
 
     local var
@@ -64,9 +65,6 @@ function install_bin_bgm123() {
 function configure_bgm123() {
     $(_get_vars_bgm123)
 
-    local share="$datadir/bgm"
-    local file
-
     # find gamelist
     local gamelist="$menudir/gamelist.xml"
     [[ -f "$gamelist" ]] || gamelist="$configdir/all/emulationstation/gamelists/retropie/gamelist.xml"
@@ -85,6 +83,7 @@ function configure_bgm123() {
     fi
 
     # preserve original file versions
+    local file
     for file in "$autostart" "$bashrc" "$onstart" "$onend"; do
         if [[ -f "$file" && ! -f "$file.old.$md_id" ]]; then
             cp -v "$file" "$file.old.$md_id"
