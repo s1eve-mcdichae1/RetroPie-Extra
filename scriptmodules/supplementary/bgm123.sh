@@ -27,10 +27,11 @@ function _get_vars_bgm123() {
         [init]="$md_inst/bgm_start.sh"
         [killscript]="$md_inst/bgm_stop.sh"
         [fadescript]="$md_inst/bgm_fade.sh"
+        [share]="$datadir/bgm"
     )
 
     local var
-    for var in "$@"; do
+    for var in "${!path[@]}"; do
         echo "local $var=${path[$var]}"
     done
 }
@@ -40,11 +41,7 @@ function depends_bgm123() {
 }
 
 function install_bin_bgm123() {
-    local vars=(
-        'config'
-        'menudir'
-    )
-    $(_get_vars_bgm123 "${vars[@]}")
+    $(_get_vars_bgm123)
 
     local file
     local scripts=(
@@ -66,18 +63,7 @@ function install_bin_bgm123() {
 }
 
 function configure_bgm123() {
-    local vars=(
-        'autostart'
-        'bashrc'
-        'onstart'
-        'onend'
-        'config'
-        'menudir'
-    )
-    $(_get_vars_bgm123 "${vars[@]}")
-
-    local share="$datadir/bgm"
-    local file
+    $(_get_vars_bgm123)
 
     # find gamelist
     local gamelist="$menudir/gamelist.xml"
@@ -97,6 +83,7 @@ function configure_bgm123() {
     fi
 
     # preserve original file versions
+    local file
     for file in "$autostart" "$bashrc" "$onstart" "$onend"; do
         if [[ -f "$file" && ! -f "$file.old.$md_id" ]]; then
             cp -v "$file" "$file.old.$md_id"
@@ -141,17 +128,7 @@ function configure_bgm123() {
 
 function toggle_bgm123() {
     local file
-    local vars=(
-        'autostart'
-        'bashrc'
-        'onstart'
-        'onend'
-        'config'
-        'init'
-        'killscript'
-        'fadescript'
-    )
-    $(_get_vars_bgm123 "${vars[@]}")
+    $(_get_vars_bgm123)
 
     # attempt to remove any existing bgm config
     for file in "$autostart" "$bashrc" "$onstart" "$onend"; do
@@ -206,14 +183,7 @@ function enable_bgm123() {
 }
 
 function gui_bgm123() {
-    local vars=(
-        'autostart'
-        'config'
-        'init'
-        'killscript'
-        'fadescript'
-    )
-    $(_get_vars_bgm123 "${vars[@]}")
+    $(_get_vars_bgm123)
 
     while true; do
         iniConfig "=" '"' "$config"
