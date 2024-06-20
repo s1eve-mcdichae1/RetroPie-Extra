@@ -15,6 +15,7 @@ rp_module_help="ROM Extensions: .v32 .zip\n\nCopy your roms to $romdir/vircon32\
 rp_module_licence="3-Clause BSD https://raw.githubusercontent.com/vircon32/vircon32-libretro/main/LICENSE.md"
 rp_module_repo="git https://github.com/vircon32/vircon32-libretro.git main"
 rp_module_section="exp"
+rp_module_flags="!all 64bit"
 
 function sources_lr-vircon32() {
     gitPullOrClone
