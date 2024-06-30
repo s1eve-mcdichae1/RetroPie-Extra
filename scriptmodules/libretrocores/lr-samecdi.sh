@@ -14,7 +14,7 @@ rp_module_desc="Philips CDI - same_cdi port for libretro"
 rp_module_help="ROM Extensions: ..chd .iso .zip\n\nCopy your roms to $romdir/cdimono1\n\nCopy your mame/mess bios (cdimono1.zip) to $biosdir/same_cdi/bios\n\n"
 rp_module_repo="git https://github.com/libretro/same_cdi.git master"
 rp_module_section="exp"
-rp_module_flags="!rpi5"
+rp_module_flags="$([[ $(arch) == aarch64 ]] && echo !32bit)"
 
 function sources_lr-same_cdi() {
     gitPullOrClone
