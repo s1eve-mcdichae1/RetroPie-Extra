@@ -21,8 +21,14 @@ function sources_lr-same_cdi() {
 }
 
 function build_lr-same_cdi() {
+    if isPlatform "64bit"; then
+        rpSwap on 10240
+    else
+        rpSwap on 6144
+    fi
     make -f Makefile.libretro clean
     make -f Makefile.libretro
+    rpSwap off
     md_ret_require="$md_build/same_cdi_libretro.so"
 }
 
