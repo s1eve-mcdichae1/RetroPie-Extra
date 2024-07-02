@@ -12,13 +12,17 @@
 
 rp_module_id="soh"
 rp_module_desc="soh - Ship of Harkinian is an advanced source port for The Legend of Zelda - Ocarina of Time"
-rp_module_help="Save your valid .z64 copy of Ocarina of Time and/or Ocarina of Time Master Quest to $romdir/n64"
+rp_module_help="Save your valid PAL .z64 copy of Ocarina of Time and/or Ocarina of Time Master Quest to $romdir/n64"
 rp_module_repo="git https://github.com/HarbourMasters/Shipwright 8.0.4"
 rp_module_section="exp"
 rp_module_flags="!all 64bit"
 
 function depends_soh() {
     getDepends gcc g++ git cmake ninja-build lsb-release libsdl2-dev libpng-dev libsdl2-net-dev libzip-dev zipcmp zipmerge ziptool nlohmann-json3-dev libtinyxml2-dev libspdlog-dev libboost-dev libopengl-dev jq
+}
+
+function sources_soh() {
+    gitPullOrClone
 }
 
 function increase_swap() {
@@ -43,8 +47,8 @@ function check_and_copy_rom() {
 
     mkdir -p "$destdir"
 
-    # Read the JSON file and extract the hashes
-    local hashes=$(jq -r '.hashes[]' "$hashes_file")
+    # Read the JSON file and extract the sha1 hashes
+    local hashes=$(jq -r '.[].sha1' "$hashes_file")
 
     # Iterate through the files in the ROM directory
     for file in "$romdir"/*; do
