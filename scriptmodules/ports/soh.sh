@@ -18,7 +18,7 @@ rp_module_section="exp"
 rp_module_flags="!all 64bit"
 
 function depends_soh() {
-    getDepends gcc g++ git cmake ninja-build lsb-release libsdl2-dev libpng-dev libsdl2-net-dev libzip-dev zipcmp zipmerge ziptool nlohmann-json3-dev libtinyxml2-dev libspdlog-dev libboost-dev libopengl-dev jq
+    getDepends gcc g++ git cmake ninja-build libglew-dev lsb-release libsdl2-dev libpng-dev libsdl2-net-dev libzip-dev zipcmp zipmerge ziptool nlohmann-json3-dev libtinyxml2-dev libspdlog-dev libboost-dev libopengl-dev jq
 }
 
 function sources_soh() {
