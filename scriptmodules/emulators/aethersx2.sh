@@ -47,13 +47,13 @@ function configure_aethersx2() {
     mkUserDir "$md_conf_root/ps2/Config/inis"
     
     # Create the ps2 BIOs directory if it doesn't exist
-    if [ ! -d "$home/RetroPie/BIOS/ps2" ]; then
-        mkdir -p "$home/RetroPie/BIOS/ps2"
+    if [ ! -d "$biosdir/ps2" ]; then
+        mkdir -p "$biosdir/ps2"
     fi
-    chown -R $user:$user "$home/RetroPie/BIOS/ps2"
+    chown -R $user:$user "$biosdir/ps2"
     # Create a symbolic link for BIOS
     if [ ! -L "$home/.config/aethersx2/bios" ]; then
-        ln -s "$home/RetroPie/BIOS/ps2" "$home/.config/aethersx2/bios"
+        ln -s "$biosdir/ps2" "$home/.config/aethersx2/bios"
     fi
     
     # preset a few options on a first installation
