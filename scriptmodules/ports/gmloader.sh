@@ -47,16 +47,18 @@ function install_gmloader() {
 function configure_gmloader() {
     local apk_dir="$romdir/ports/droidports"
     local maldita_url="https://github.com/Exarkuniv/game-data/raw/main/Maldita_Castilla_ouya.apk"
+	local am2r_url="https://archive.org/download/am-2-r-1.5.5-for-android/AM2R%20v1.5.5%20for%20Android.apk"
     local spelunky_url="https://github.com/yancharkin/SpelunkyClassicHD/releases/download/1.1.7-optimized/spelunky_classic_hd-android-armv7.apk"
 
     if [[ "$md_mode" == "install" ]]; then
         mkUserDir "$apk_dir"
         local dl_url
-        for dl_url in "$maldita_url" "$spelunky_url"; do
+        for dl_url in "$maldita_url" "$am2r_url" "$spelunky_url"; do
             local apk_file="$apk_dir/$(basename ${dl_url})"
             if [[ ! -f "$apk_file" ]]; then
                 download "$dl_url" "$apk_dir"
                 chown $user:$user "$apk_file"
+                mv -f $apk_dir/AM2R%20v1.5.5%20for%20Android.apk $apk_dir/AM2R.apk
             fi
         done
 
@@ -81,13 +83,10 @@ _EOF_
 
     local maldita_file="$apk_dir/$(basename ${maldita_url})"
     local spelunky_file="$apk_dir/$(basename ${spelunky_url})"
+	local am2r_file="$apk_dir/$(basename ${am2r_url})"
     addPort "$md_id" "droidports" "Maldita Castilla" "$md_inst/gmlauncher.sh %ROM%" "$maldita_file"
     addPort "$md_id" "droidports" "Spelunky Classic HD" "$md_inst/gmlauncher.sh %ROM%" "$spelunky_file"
-
-    local am2r_file="$apk_dir/am2r_155.apk"
-    if [[ -f "$am2r_file" || "$md_mode" == "remove" ]]; then
-        addPort "$md_id" "droidports" "AM2R - Another Metroid 2 Remake" "$md_inst/gmlauncher.sh %ROM%" "$am2r_file"
-    fi
-
+    addPort "$md_id" "droidports" "AM2R - Another Metroid 2 Remake" "$md_inst/gmlauncher.sh %ROM%" "$am2r_file"
+	
     moveConfigDir "$home/.config/gmloader" "$md_conf_root/droidports"
 }
