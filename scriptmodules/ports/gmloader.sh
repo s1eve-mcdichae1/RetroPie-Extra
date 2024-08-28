@@ -46,7 +46,7 @@ function install_gmloader() {
 
 function configure_gmloader() {
     local apk_dir="$romdir/ports/droidports"
-    local maldita_url="https://github.com/Exarkuniv/game-data/blob/main/Maldita_Castilla_ouya.apk"
+    local maldita_url="https://github.com/Exarkuniv/game-data/raw/main/Maldita_Castilla_ouya.apk"
     local spelunky_url="https://github.com/yancharkin/SpelunkyClassicHD/releases/download/1.1.7-optimized/spelunky_classic_hd-android-armv7.apk"
 
     if [[ "$md_mode" == "install" ]]; then
