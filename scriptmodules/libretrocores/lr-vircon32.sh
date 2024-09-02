@@ -15,15 +15,23 @@ rp_module_help="ROM Extensions: .v32 .zip\n\nCopy your roms to $romdir/vircon32\
 rp_module_licence="3-Clause BSD https://raw.githubusercontent.com/vircon32/vircon32-libretro/main/LICENSE.md"
 rp_module_repo="git https://github.com/vircon32/vircon32-libretro.git main"
 rp_module_section="exp"
-rp_module_flags="!all 64bit"
+rp_module_flags="!all rpi3 rpi4 rpi5 x86"
 
 function sources_lr-vircon32() {
     gitPullOrClone
+    local cmake_ver
+    cmake_ver=$(cmake --version | head -n 1 | cut -f 3 -d ' ')
+    if dpkg --compare-versions "${cmake_ver}" lt 3.17 ; then
+        # for OS with cmake less than 3.17 (missing: foreach(<loop_var>... IN ZIP_LISTS <lists>))
+        applyPatch "$md_data/cmake_pre3.17.patch"
+    fi
 }
 
 function build_lr-vircon32() {
-	cmake .
-    make
+    local defines=()
+    isPlatform "gles" && defines+=("-DENABLE_OPENGLES2=1")
+    cmake "${defines[@]}" .
+    make -j$(nproc)
     md_ret_require="$md_build/vircon32_libretro.so"
 }
 

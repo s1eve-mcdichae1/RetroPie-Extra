@@ -1,0 +1,55 @@
+diff --git a/embed-binaries/embed-binaries.cmake b/embed-binaries/embed-binaries.cmake
+index d46353e..1f54841 100644
+--- a/embed-binaries/embed-binaries.cmake
++++ b/embed-binaries/embed-binaries.cmake
+@@ -1,7 +1,3 @@
+-cmake_minimum_required(VERSION
+-	3.17.5 # foreach(loop-var... IN ZIP_LISTS <lists>...)
+-)
+-
+ include_guard()
+ 
+ function(generate_code_to_embed_binary asset_name asset_path byte_type constexpr null_terminate out_generated_header out_generated_implementation)
+@@ -145,12 +141,17 @@ function(embed_binaries target_name)
+ 			list(APPEND asset_${param_name}s ${asset_${param_name}})
+ 		endforeach()
+ 
+-		foreach(param_name default_value IN ZIP_LISTS asset_optional_args asset_optional_args_defaults)
+-			if (NOT DEFINED asset_${param_name})
+-				set(asset_${param_name} ${default_value})
++		list(LENGTH asset_optional_args _alen)
++		math(EXPR alen "${_alen} - 1")
++
++		foreach(i RANGE ${alen})
++			list(GET asset_optional_args ${i} arg_key)
++			list(GET asset_optional_args_defaults ${i} arg_dflt_val)
++			if (NOT DEFINED asset_${arg_key})
++				set(asset_${arg_key} ${arg_dflt_val})
+ 			endif()
+ 
+-			list(APPEND asset_${param_name}s ${asset_${param_name}})
++			list(APPEND asset_${arg_key}s ${asset_${arg_key}})
+ 		endforeach()
+ 	endwhile()
+ 
+@@ -173,10 +174,16 @@ function(embed_binaries target_name)
+ 		target_compile_features("${target_name}" INTERFACE cxx_constexpr)
+ 	endif()
+ 
+-	foreach(
+-		asset_NAME asset_PATH asset_CONSTEXPR asset_BYTE_TYPE asset_NULL_TERMINATE
+-		IN ZIP_LISTS
+-		asset_NAMEs asset_PATHs asset_CONSTEXPRs asset_BYTE_TYPEs asset_NULL_TERMINATEs)
++	list(LENGTH asset_NAMEs _nlen)
++	math(EXPR nlen "${_nlen} - 1")
++
++	foreach(i RANGE ${nlen})
++		list(GET asset_NAMEs ${i} asset_NAME)
++		list(GET asset_PATHs ${i} asset_PATH)
++		list(GET asset_CONSTEXPRs ${i} asset_CONSTEXPR)
++		list(GET asset_BYTE_TYPEs ${i} asset_BYTE_TYPE)
++		list(GET asset_NULL_TERMINATEs ${i} asset_NULL_TERMINATE)
++
+ 		string(MAKE_C_IDENTIFIER "${asset_NAME}" asset_name_identifier)
+ 
+ 		get_filename_component(asset_PATH ${asset_PATH} ABSOLUTE)
