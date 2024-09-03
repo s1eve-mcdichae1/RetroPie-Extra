@@ -78,7 +78,7 @@ MainWindowState = AAAA/wAAAAD9AAAAAAAAB3gAAAP3AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAg
 
 
 [Folders]
-Bios = ../../../../../../home/pi/RetroPie/BIOS/ps2
+Bios = ../../../../../../home/$user/RetroPie/BIOS/ps2
 Snapshots = snaps
 Savestates = sstates
 MemoryCards = memcards
