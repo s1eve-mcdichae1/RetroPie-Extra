@@ -14,9 +14,9 @@ rp_module_id="lr-openlara"
 rp_module_desc="Tomb Raider engine - OpenLara port for libretro"
 rp_module_help="ROM Extensions: .PHD .PNG .PSX .SAT .TR2\nAudio Extensions: .ogg .SFX\nVideo Extension: .RPL .FMV\n\nFor more information:\nhttps://docs.libretro.com/library/openlara/#directories"
 rp_module_licence="BSD 2-Clause https://raw.githubusercontent.com/libretro/OpenLara/master/LICENSE"
-rp_module_repo="git https://github.com/libretro/OpenLara master"
+rp_module_repo="git https://github.com/micahvdm/OpenLara.git master"
 rp_module_section="exp"
-rp_module_flags="!rpi5"
+rp_module_flags="rpi5"
 
 function sources_lr-openlara() {
     gitPullOrClone
