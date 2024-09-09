@@ -36,6 +36,6 @@ function configure_lr-wasm4() {
 
     mkUserDir "$md_conf_root/wasm4"
 
-    addEmulator 1 "lr-wasm4" "wasm4" "$md_inst/wasm4_libretro.so"
-    addSystem "wasm4"
+    addEmulator 1 "$md_id" "wasm4" "$md_inst/wasm4_libretro.so"
+    addSystem "wasm4" "Wasm4" ".zip .ZIP .wasm .WASM"
 }
