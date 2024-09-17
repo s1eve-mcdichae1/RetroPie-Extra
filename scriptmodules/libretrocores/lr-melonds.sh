@@ -18,10 +18,6 @@ rp_module_repo="git https://github.com/libretro/melonDS.git master"
 rp_module_section="exp"
 rp_module_flags=""
 
-#function depends_lr-melonds() {
-#    getDepends libwebkitgtk-3.0-dev libcurl4-gnutls-dev libpcap0.8-dev libsdl2-dev
-#}
-
 function sources_lr-melonds() {
     gitPullOrClone
 }
