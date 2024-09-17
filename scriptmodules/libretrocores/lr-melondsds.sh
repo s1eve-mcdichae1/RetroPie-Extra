@@ -18,10 +18,6 @@ rp_module_repo="git https://github.com/JesseTG/melonds-ds.git main"
 rp_module_section="exp"
 rp_module_flags=""
 
-#function depends_lr-melondsds() {
-#    getDepends libwebkitgtk-3.0-dev libcurl4-gnutls-dev libpcap0.8-dev libsdl2-dev
-#}
-
 function sources_lr-melondsds() {
     gitPullOrClone
 }
