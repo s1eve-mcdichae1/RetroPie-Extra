@@ -302,36 +302,8 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] - `videolan.sh` - VLC media player - **Installs Runs fine**
 - [X] - `weechat.sh` - Console IRC Client - **Installs Runs fine, dont know how to quit**
 
-### Removed broken scripts to RetroPie-Extra-unstable
-
-- [X] - `supermodel.sh` - Sega Model 3 Arcade emulator  - **Installs Does play, test game are slow**
-- [ ] - `lr-craft.sh` - Minecraft engine  - **Installs Fails to start**
-- [ ] - `lr-easyrpg.sh` - RPG Maker 2000/2003 engine - EasyRPG Player interpreter port for libretro - **Fail**
-- [ ] - `lr-ecwolf.sh` - Wolfestein 3D engine - ECWolf port based of Wolf4SDL for libretro - **Installs Fails to start games**
-- [ ] - `lr-pocketcdg.sh` - A MP3 karaoke music player. - **Installs, Fails to load files **
-- [ ] - `lr-minivmac.sh` -  Macintosh Plus Emulator - Mini vMac port for libretro - **Installs, Black screen when starting games**
-- [ ] - `deadbeef.sh` - Music and ripped game music player - **Installs**
-- [ ] - `corsixth.sh` - Theme Hospital engine clone - **Installs, Lua error, will not play**
-- [ ] - `fofix.sh` - FoFix - Guitar Hero and Rock Band clone - **Bin file is nolonger able to download**
-- [ ] - `funnyboat.sh` - Funny Boat. A side scrolling boat shooter with waves - **Installs, Plays in small window**
-- [ ] - `ganbare.sh` - Japanese 2D Platformer - **Installs, Plays in small window**
-- [ ] - `gamemaker.sh` - Install the 3 gamemaker games - **Failed to build**
-- [ ] - `lutris.sh` - lutris - Game engine for linux - **fails, missing package now**
-- [ ] - `maelstrom.sh` - Maelstrom - Classic Mac Asteroids Remake - **Failed to build**
-- [ ] - `mame-tools.sh` - Additional tools for MAME/MESS **Failed**
-- [ ] - `manaplus.sh` - 2D MMORPG client - **Failed to build**
-- [ ] - `openxcom.sh` - Open Source X-COM Engine - **Failed to build**
-- [ ] - `kaiten-patissier.sh` - Japanese 2D Platformer - **Installs Plays in small window**
-- [ ] - `kaiten-patissier-ura.sh` - Japanese 2D Platformer - **Installs Plays in small window**
-- [ ] - `refkeen.sh` - port for Keen Dreams, The Catacomb Adventure Series and Wolf3d  - **Does not install now**
-- [ ] - `shiromino.sh` - Tetris the Grand Master Clone - Requires keyboard to restart/quit.  - **Installs, cant find the config file, fails to start **
-- [ ] - `texmaster2009.sh` - Tetris TGM clone - **Plays in small screen**
-- [ ] - `tinyfugue.sh` - MUD client - **fails to start**
-- [ ] - `ulmos-adventure.sh` - Simple Adventure Game - **Installs Small screen**
-- [ ] - `vorton.sh` - Highway Encounter Remake in Spanish - **Installs small screen**
-- [ ] - `vgmplay.sh` - Music Player - **fails, missing package now**
-- [ ] - `wizznic.sh` - Puzznic clone - **Installs Plays, screen is small**
-- [ ] - `zeldapicross.sh` - Zelda themed Picross fangame - **Installs starts but will not go past first screen**
+##Broken or dead scripts have been moved to to RetroPie-Extra-unstable
+## If you want to try and fix them, have at it
 
 ## Hall of Fame - Scripts accepted into RetroPie-Setup
 
