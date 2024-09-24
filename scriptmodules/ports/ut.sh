@@ -135,9 +135,9 @@ function configure_ut() {
     moveConfigDir "$home/.utpg" "$md_conf_root/ut"
 
     # We only want to install this if it is not already installed.
-    if [[ ! -f "$home/.utpg/UnrealTournament.ini" ]]; then
-        cp "$md_data/UnrealTournament.ini" "$home/.utpg/UnrealTournament.ini"
-        chown "$__user":"$__group" "$home/.utpg/UnrealTournament.ini"
-        chmod 644 "$home/.utpg/UnrealTournament.ini"
+    if [[ ! -f "$home/.utpg/System/UnrealTournament.ini" ]]; then
+        cp "$md_data/UnrealTournament.ini" "$home/.utpg/System/UnrealTournament.ini"
+        chown "$__user":"$__group" "$home/.utpg/System/UnrealTournament.ini"
+        chmod 644 "$home/.utpg/System/UnrealTournament.ini"
     fi
 }
