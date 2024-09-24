@@ -14,7 +14,7 @@ rp_module_desc="Multiplatform Sega Dreamcast, Naomi, Naomi 2 and Atomiswave emul
 rp_module_help="Dreamcast ROM Extensions: .cdi .gdi .chd, Naomi/Atomiswave ROM Extension: .zip\n\nCopy your Dreamcast/Naomi roms to $romdir/dreamcast\n\nCopy the required Dreamcast BIOS files dc_boot.bin and dc_flash.bin to $biosdir/dc\n\nCopy the required Naomi/Atomiswave BIOS files naomi.zip/naomigd.zip and awbios.zip to $biosdir/dc"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/flyinghead/flycast/master/LICENSE"
 rp_module_repo="git https://github.com/flyinghead/flycast.git master"
-rp_module_section="opt"
+rp_module_section="exp"
 rp_module_flags="!armv6 !videocore !:\$__gcc_version:-lt:9"
 
 function depends_flycast() {
