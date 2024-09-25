@@ -11,12 +11,12 @@
 #
 
 rp_module_id="lr-melonds"
-rp_module_desc="NDS emu - MelonDS port for libretro"
+rp_module_desc="NDS emu - MelonDS port for libretro  - Runs slow on Pi4 but does run"
 rp_module_help="ROM Extensions: .nds .zip .7z\n\nCopy your Nintendo DS roms to $romdir/nds\n\nCopy firmware.bin, bios7.bin and bios9.bin to $biosdir"
 rp_module_licence="GPL3 https://raw.githubusercontent.com/libretro/melonDS/master/LICENSE"
 rp_module_repo="git https://github.com/libretro/melonDS.git master"
 rp_module_section="exp"
-rp_module_flags=""
+rp_module_flags="!all rpi4 !rpi5"
 
 function sources_lr-melonds() {
     gitPullOrClone
