@@ -17,7 +17,7 @@
 #   "libisl.so.23: ELF load command address/offset not page-aligned"
 #
 # - This script can not be exucuted in steps (e.g. depends, sources, build,
-#   install, configure) as it will resets the gcc:armhf installation to
+#   install, configure) as it will reset the gcc:armhf installation to
 #   gcc:arm64.
 #
 
@@ -197,19 +197,23 @@ function install_gmloader() {
 
 function configure_gmloader() {
     local apk_dir="$romdir/ports/droidports"
-    local maldita_url="https://github.com/Exarkuniv/game-data/raw/main/Maldita_Castilla_ouya.apk"
     local am2r_url="https://archive.org/download/am-2-r-1.5.5-for-android/AM2R%20v1.5.5%20for%20Android.apk"
+    local maldita_url="https://github.com/Exarkuniv/game-data/raw/main/Maldita_Castilla_ouya.apk"
     local spelunky_url="https://github.com/yancharkin/SpelunkyClassicHD/releases/download/1.1.7-optimized/spelunky_classic_hd-android-armv7.apk"
 
     if [[ "$md_mode" == "install" ]]; then
         mkUserDir "$apk_dir"
         local dl_url
-        for dl_url in "$maldita_url" "$am2r_url" "$spelunky_url"; do
-            local apk_file="$apk_dir/$(basename ${dl_url})"
+        for dl_url in "$am2r_url" "$maldita_url" "$spelunky_url"; do
+            local dest_file
+            dest_file=$(basename ${dl_url})
+            if case "$dest_file" in AM2R*) ;; *) false;; esac; then
+                dest_file="AM2R.apk"
+            fi
+            local apk_file="$apk_dir/$dest_file"
             if [[ ! -f "$apk_file" ]]; then
-                download "$dl_url" "$apk_dir"
+                download "$dl_url" "$apk_file"
                 chown $user:$user "$apk_file"
-                mv -f $apk_dir/AM2R%20v1.5.5%20for%20Android.apk $apk_dir/AM2R.apk
             fi
         done
 
@@ -240,12 +244,15 @@ _EOF_
         fi
     fi
 
-    local maldita_file="$apk_dir/$(basename ${maldita_url})"
-    local spelunky_file="$apk_dir/$(basename ${spelunky_url})"
-    local am2r_file="$apk_dir/$(basename ${am2r_url})"
+    local am2r_file
+    local maldita_file
+    local spelunky_file
+    am2r_file="$apk_dir/AM2R.apk"
+    maldita_file="$apk_dir/$(basename ${maldita_url})"
+    spelunky_file="$apk_dir/$(basename ${spelunky_url})"
+    addPort "$md_id" "droidports" "AM2R - Another Metroid 2 Remake" "$md_inst/gmlauncher.sh %ROM%" "$am2r_file"
     addPort "$md_id" "droidports" "Maldita Castilla" "$md_inst/gmlauncher.sh %ROM%" "$maldita_file"
     addPort "$md_id" "droidports" "Spelunky Classic HD" "$md_inst/gmlauncher.sh %ROM%" "$spelunky_file"
-    addPort "$md_id" "droidports" "AM2R - Another Metroid 2 Remake" "$md_inst/gmlauncher.sh %ROM%" "$am2r_file"
 
     moveConfigDir "$home/.config/gmloader" "$md_conf_root/droidports"
 }
