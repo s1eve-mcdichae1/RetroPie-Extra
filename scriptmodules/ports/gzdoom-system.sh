@@ -10,59 +10,75 @@
 #
 
 rp_module_id="gzdoom-system"
-rp_module_desc="GZDoom System - Yes the real GZDoom on Pi, running in GLES"
-rp_module_licence="GPL3 https://raw.githubusercontent.com/drfrag666/gzdoom/master/LICENSE"
-rp_module_repo="git https://github.com/Exarkuniv/gzdoom-Pi.git master"
+rp_module_desc="GZDoom System - GZDoom as a system"
+rp_module_licence="GPL3 https://raw.githubusercontent.com/ZDoom/gzdoom/master/LICENSE"
+rp_module_repo="git https://github.com/ZDoom/gzdoom :_get_version_gzdoom"
 rp_module_section="exp"
 rp_module_flags=""
 
-function depends_gzdoom-system() {
-     getDepends g++ make cmake libsdl2-dev git zlib1g-dev libbz2-dev libjpeg-dev libfluidsynth-dev libgme-dev libopenal-dev libmpg123-dev libsndfile1-dev libgtk-3-dev timidity nasm libgl1-mesa-dev tar libsdl1.2-dev libglew-dev libvpx-dev libvulkan-dev
+function _get_version_gzdoom() {
+    # default GZDoom version
+    local gzdoom_version="g4.12.2"
 
+    # 32 bit is no longer supported since g4.8.1
+    isPlatform "32bit" && gzdoom_version="g4.8.0"
+    echo $gzdoom_version
+}
+
+function depends_gzdoom-system() {
+    local depends=(
+        cmake libfluidsynth-dev libsdl2-dev libmpg123-dev libsndfile1-dev libbz2-dev
+        libopenal-dev libjpeg-dev libgl1-mesa-dev libasound2-dev libmpg123-dev libsndfile1-dev
+        libvpx-dev libwebp-dev pkg-config
+        zlib1g-dev)
+    getDepends "${depends[@]}"
 }
 
 function sources_gzdoom-system() {
-    gitPullOrClone "$md_build"
+    gitPullOrClone
+    # add 'ZMusic' repo
+    cd "$md_build"
+    gitPullOrClone zmusic https://github.com/ZDoom/ZMusic
+    # workaround for Ubuntu 20.04 older vpx/wepm dev libraries
+    sed -i 's/IMPORTED_TARGET libw/IMPORTED_TARGET GLOBAL libw/' CMakeLists.txt
+    # lzma assumes hardware crc support on arm which breaks when building on armv7
+    isPlatform "armv7" && applyPatch "$md_data/lzma_armv7_crc.diff"
 }
 
 function build_gzdoom-system() {
-       if [ ! -f "/usr/lib/arm-linux-gnueabihf/libzmusic.so" ]; then
-	gitPullOrClone "$md_build/zmusic" https://github.com/coelckers/ZMusic.git
-    cd $md_build/zmusic
-    mkdir build
-    cd build
-    cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr 
+    mkdir -p release
+
+    # build 'ZMusic' first
+    pushd zmusic
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$md_build/release/zmusic" .
     make
     make install
-    rm -r $md_build/zmusic
+    popd
 
-    fi
+    cd release
+    local params=(-DCMAKE_INSTALL_PREFIX="$md_inst" -DPK3_QUIET_ZIPDIR=ON -DCMAKE_BUILD_TYPE=Release -DDYN_OPENAL=ON -DCMAKE_PREFIX_PATH="$md_build/release/zmusic")
+    ! hasFlag "vulkan" && params+=(-DHAVE_VULKAN=OFF)
 
-    mkdir $md_build/build
-    cd $md_build/build
-    c="$(lscpu -p | grep -v '#' | sort -u -t , -k 2,4 | wc -l)" ; [ "$c" -eq 0 ] && c=1
-    rm -f output_sdl/liboutput_sdl.so &&
-    if [ -d ../fmodapi44464linux ]; then
-    f="-DFMOD_LIBRARY=../fmodapi44464linux/api/lib/libfmodex${a}-4.44.64.so \
-    -DFMOD_INCLUDE_DIR=../fmodapi44464linux/api/inc"; else
-    f='-UFMOD_LIBRARY -UFMOD_INCLUDE_DIR'; fi &&
-    cmake .. -DCMAKE_BUILD_TYPE=Release
-    make -j4
-
+    cmake "${params[@]}" ..
+    make
+    md_ret_require="$md_build/release/gzdoom"
 }
 
 function install_gzdoom-system() {
     md_ret_files=(
-        'build/brightmaps.pk3'
-        'build/gzdoom'
-        'build/gzdoom.pk3'
-        'build/lights.pk3'
-        'build/game_support.pk3'
-	'build/soundfonts'
-        'build/game_widescreen_gfx.pk3'
+        'release/brightmaps.pk3'
+        'release/gzdoom'
+        'release/gzdoom.pk3'
+        'release/lights.pk3'
+        'release/game_support.pk3'
+        'release/game_widescreen_gfx.pk3'
+        'release/soundfonts'
+        "release/zmusic/lib/libzmusic.so.1"
+        "release/zmusic/lib/libzmusic.so.1.1.13"
         'README.md'
     )
 }
+
 
 function game_data_gzdoom-system() {
     mkRomDir "doom"
@@ -80,12 +96,29 @@ function game_data_gzdoom-system() {
 }
 
 function configure_gzdoom-system() {
+
+    local params=("-fullscreen")
+    local launcher_prefix="DOOMWADDIR=$romdir/ports/doom"
+
+    # FluidSynth is too memory/CPU intensive, use OPL emulation for MIDI
+    if isPlatform "arm"; then
+        params+=("+set snd_mididevice -3")
+    fi
+    # when using the 32bit version on GLES platforms, pre-set the renderer
+    if isPlatform "32bit" && hasFlag "gles"; then
+        params+=("+set vid_preferbackend 2")
+    fi
+
+    if isPlatform "kms"; then
+        params+=("-width %XRES%" "-height %YRES%")
+    fi
+	
     mkUserDir "$home/.config"
     setConfigRoot ""
-    addEmulator 1 "gzdoom" "doom" "$md_inst/gzdoom +set vid_preferbackend 3 -iwad %ROM%"
+    addEmulator 1 "gzdoom" "doom" "$launcher_prefix $md_inst/gzdoom -iwad %ROM% ${params[*]}"
     addSystem "doom" "DOOM" ".pk3 .wad"
 
-    moveConfigDir "$home/.config/gzdoom" "$md_conf_root/gzdoom"
+    moveConfigDir "$home/.config/$md_id" "$md_conf_root/doom"
 
     [[ "$md_mode" == "install" ]] && game_data_gzdoom-system
     [[ "$md_mode" == "remove" ]] && return
