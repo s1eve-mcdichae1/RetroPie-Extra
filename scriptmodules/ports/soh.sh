@@ -13,31 +13,20 @@
 rp_module_id="soh"
 rp_module_desc="soh - Ship of Harkinian is an advanced source port for The Legend of Zelda - Ocarina of Time"
 rp_module_help="Save your valid PAL .z64 copy of Ocarina of Time and/or Ocarina of Time Master Quest to $romdir/n64"
-rp_module_repo="git https://github.com/HarbourMasters/Shipwright 8.0.4"
+rp_module_repo="git https://github.com/HarbourMasters/Shipwright develop"
 rp_module_section="exp"
 rp_module_flags="!all 64bit"
 
 function depends_soh() {
-    getDepends gcc g++ git cmake ninja-build libglew-dev lsb-release libsdl2-dev libpng-dev libsdl2-net-dev libzip-dev zipcmp zipmerge ziptool nlohmann-json3-dev libtinyxml2-dev libspdlog-dev libboost-dev libopengl-dev jq
-}
+    local depends=(gcc g++ git cmake ninja-build lsb-release libsdl2-dev libpng-dev 
+	libsdl2-net-dev libzip-dev zipcmp zipmerge ziptool nlohmann-json3-dev 
+	libtinyxml2-dev libspdlog-dev libboost-dev libopengl-dev jq xorg libpulse-dev)
+	
+    getDepends "${depends[@]}"   
 
+}
 function sources_soh() {
     gitPullOrClone
-}
-
-function increase_swap() {
-    original_swap=$(grep SwapTotal /proc/meminfo | awk '{print $2}')
-    sudo dphys-swapfile swapoff
-    sudo sed -i 's/^CONF_SWAPSIZE=.*/CONF_SWAPSIZE=2048/' /etc/dphys-swapfile
-    sudo dphys-swapfile setup
-    sudo dphys-swapfile swapon
-}
-
-function restore_swap() {
-    sudo dphys-swapfile swapoff
-    sudo sed -i "s/^CONF_SWAPSIZE=.*/CONF_SWAPSIZE=$((original_swap / 1024))/" /etc/dphys-swapfile
-    sudo dphys-swapfile setup
-    sudo dphys-swapfile swapon
 }
 
 function check_and_copy_rom() {
@@ -74,12 +63,12 @@ function build_soh() {
         return 1
     fi
 
-    increase_swap
+    rpSwap on 2048
     cmake -H. -Bbuild-cmake -GNinja
-    cmake --build build-cmake --target ExtractAssets
-    cmake --build build-cmake
+    cmake --build build-cmake --target ExtractAssets -j3
+    cmake --build build-cmake-j3
     md_ret_require="$md_build/build-cmake/soh"
-    restore_swap
+    rpSwap off
 }
 
 function install_soh() {
@@ -91,17 +80,46 @@ function install_soh() {
 }
 
 function configure_soh() {
+    local launch_prefix="XINIT-WM:"
 
     cat > "$md_inst/soh.sh" << _EOF_
 #!/bin/bash
 
 # Change directory
-cd "$md_conf_root/soh" || exit
+cd "$md_inst" || exit
  
 # Run the soh.elf file
 ./soh.elf
 _EOF_
+
     chmod +x "$md_inst/soh.sh"
 
-    addPort "$md_id" "soh" "Ship of Harkinian - Ocarina of Time" "XINIT-WM:$md_inst/soh.sh"
+    # Create the config file to default to fullscreen
+    cat > "$md_inst/shipofharkinian.json" << _EOF_
+
+    {
+    "Window": {
+        "AudioBackend": "sdl",
+        "Backend": {
+            "Id": 3,
+            "Name": "OpenGL"
+        },
+        "Fullscreen": {
+            "Enabled": true,
+            "Height": 1080,
+            "Width": 1920
+        },
+        "Height": 1080,
+        "PositionX": 0,
+        "PositionY": 0,
+        "Width": 1920
+    }
+
+    }
+_EOF_
+    chmod +x "$md_inst/shipofharkinian.json"
+	
+	chown -R $user:$user "$md_inst"
+
+    addPort "$md_id" "soh" "Ship of Harkinian - Ocarina of Time" "$launch_prefix$md_inst/soh.sh"
 }
