@@ -65,7 +65,7 @@ function build_2s2h() {
     fi
 
     rpSwap on 2048
-    cmake -H. -Bbuild-cmake -GNinja
+    cmake -H. -B build-cmake -GNinja -DUSE_OPENGLES=1 -DCMAKE_BUILD_TYPE:STRING=Release
     cmake --build build-cmake --target ExtractAssets -j4
     cmake --build build-cmake -j4
     md_ret_require="$md_build/build-cmake/mm"
