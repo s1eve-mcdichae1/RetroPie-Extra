@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
 
 # This file is part of RetroPie-Extra, a supplement to RetroPie.
 # For more information, please visit:
@@ -17,9 +17,12 @@
 #   "libisl.so.23: ELF load command address/offset not page-aligned"
 #
 # - This script can not be exucuted in steps (e.g. depends, sources, build,
-#   install, configure) as it will reset the gcc:armhf installation to
+#   install, configure) as each step will reset the gcc:armhf installation to
 #   gcc:arm64.
 #
+# - Whenever there is a new SDL2 version available from the
+#   RetroPie-Setup package, it should be installed before running this
+#   module.
 
 rp_module_id="gmloader"
 rp_module_desc="GMLoader - play GameMaker Studio games for Android on non-Android operating systems"
@@ -39,7 +42,7 @@ function depends_gmloader() {
             _msg+="change reboot and rerun this module."
             printMsgs "dialog" "$_msg"
             exit 1
-        fi 
+        fi
         dpkg --add-architecture armhf
         apt-get remove -y gcc:arm64 g++:arm64 binutils:arm64
 
@@ -71,6 +74,10 @@ function depends_gmloader() {
         getDepends "${armhf_deps[@]}"
 
         _gmloader_dl_install_bin_sdl2
+        if [[ $? -ne 0 ]]; then
+            printMsgs console "[!] Premature end of script. Check output above."
+            exit 1
+        fi
     else
         getDepends libopenal-dev libfreetype6-dev zlib1g-dev libbz2-dev libpng-dev libzip-dev libsdl2-image-dev cmake
     fi
@@ -113,24 +120,20 @@ function _gmloader_armhf_libdir() {
 
 function _gmloader_install_rp_sdl2() {
     _gmloader_dpkg_divert "add"
-    # if the packages don't install completely due to missing dependencies the apt-get -y -f install will correct it
-    # solved with diverting /usr/share/doc files (-o DPkg::options::="--force-overwrite")
-    if ! apt-get -y --allow-downgrades --allow-change-held-packages install \
+    if ! apt-get -y --allow-downgrades --allow-change-held-packages -o DPkg::options::="--force-overwrite" install \
             "./libsdl2-2.0-0_$(_gmloader_get_rp_pkg_ver_sdl2)_armhf.deb" \
             "./libsdl2-dev_$(_gmloader_get_rp_pkg_ver_sdl2)_armhf.deb"; then
+        # if the packages don't install completely due to missing dependencies the apt-get -y -f install will correct it
         apt-get -y -f --no-install-recommends --allow-downgrades --allow-change-held-packages install
     fi
     apt-mark hold libsdl2-2.0-0:armhf
 }
 
-# yarked from sdl2.h
+# partially yarked from sdl2.h
 function _gmloader_get_rp_pkg_ver_sdl2() {
-    local ver="2.26.3" # see sdl2.h::get_ver_sdl2
-    if [[ "$__os_debian_ver" -ge 11 ]]; then
-        ver+="+1"
-    else
-        ver+="+5"
-    fi
+    # assuming the SDL2 version for RaspiOS >= 11 in the second line of function get_ver_sdl2()
+    local ver=$(awk '/function get_ver_sdl2/{getline;getline;print $2}' "$scriptdir/scriptmodules/supplementary/sdl2.sh" | tr -d '"')
+    ver+="+1"
     isPlatform "rpi" && ver+="rpi"
     isPlatform "mali" && ver+="mali"
     echo "$ver"
@@ -149,7 +152,7 @@ function _gmloader_dl_install_bin_sdl2() {
     fi
     popd >/dev/null
     rm -rf "$tmp"
-    return "$ret"
+    return $ret
 }
 
 function sources_gmloader() {
