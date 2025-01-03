@@ -1,5 +1,6 @@
 
 # RetroPie-Extra
+**The Pi5 is still being worked on and will continue to grow as time goes on as 64bit is still new for the Pi**
 
 This is a **collection of unofficial installation scripts for RetroPie** allowing you to quickly and easily **install emulators, ports and libretrocores** that haven't been included in RetroPie for one reason or another. These scripts can be considered experimental at best. 
 I have found new scripts made by other people and added them to this Repo. I dont take credit for any of them, other then the ones I made
