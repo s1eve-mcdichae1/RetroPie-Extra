@@ -82,9 +82,10 @@ function startCmd() {
         exit
     fi
 
+    local version_req="4.8.8"
     local rp_version="$(cat /opt/retropie/VERSION)"
-    if ! dpkg --compare-versions "$rp_version" ge 4.8.8 >/dev/null; then
-        echo -e "Error: RetroPie version $rp_version is not compatible with the scripts used in this repository. Please update to RetroPie version 4.8.9 or greater.\n\nAborting."
+    if ! dpkg --compare-versions "$rp_version" ge "$version_req" >/dev/null; then
+        echo -e "Error: RetroPie version $rp_version is not compatible with the scripts used in this repository. Please update to RetroPie version $version_req or greater.\n\nAborting."
         exit
     fi
 
